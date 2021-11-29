@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useForm} from 'react-hook-form';
 import AdminHeader from '../AdminHeader/AdminHeader';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
-import './AddQuestion.css'
+// import './AddQuestion.css'
 
 
 

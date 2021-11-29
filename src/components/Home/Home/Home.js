@@ -9,6 +9,7 @@ import { getDatabaseCart } from '../../../utilities/databaseManager';
 import { UserContext } from '../../../App';
 // import fakeData from '../../../fakeData';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+import OpinionList from '../OpinionList/OpinionList';
 const Home = () => {
     const [cart, setCart] = useState([]);
     const itemData = localStorage.getItem('item')
@@ -30,6 +31,7 @@ const Home = () => {
             {loggedInUser.email || sessionStorage.getItem('token') ? <Menu></Menu> : <></>}
 
             {/* <About></About> */}
+            <OpinionList />
             <Footer></Footer>
 
             <MessengerCustomerChat

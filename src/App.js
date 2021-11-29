@@ -7,6 +7,7 @@ import {
 import './App.css';
 import AddItem from "./components/Admin/AddItem/AddItem";
 import AddQuestion from "./components/Admin/AddQuestion/AddQuestion";
+import AddTeacher from "./components/Admin/AddTeacher/AddTeacher";
 import AllItem from "./components/Admin/AllItem/AllItem";
 import DeliveryOrder from "./components/Admin/DeliveryOrder/DeliveryOrder";
 import PendingOrder from "./components/Admin/PendingOrder/PendingOrder";
@@ -19,6 +20,8 @@ import Login from "./components/Login/Login/Login";
 import PrivateRoute from "./components/Login/PrivateRoute/PrivateRoute";
 import SignUp from "./components/Login/SignUp/SignUp";
 import Shipment from "./components/Shipment/Shipment/Shipment";
+import Appointment from "./components/Home/Appointment/Appointment";
+import Opinion from "./components/User/Opinion/Opinion";
 
 export const UserContext = createContext();
 
@@ -53,6 +56,9 @@ function App() {
           <Route path="/shipment">
             <Shipment></Shipment>
           </Route>
+          <Route path="/user/appointment">
+            <Appointment />
+          </Route>
           <Route path="/admin/pending">
             <PendingOrder></PendingOrder>
           </Route>
@@ -67,6 +73,12 @@ function App() {
           </Route>
           <Route path="/admin/addQuestion">
             <AddQuestion/>
+          </Route>
+          <Route path="/admin/addTeacher">
+            <AddTeacher/>
+          </Route>
+          <Route path="/user/opinion">
+            <Opinion/>
           </Route>
           <Route path="/">
             <Home></Home>

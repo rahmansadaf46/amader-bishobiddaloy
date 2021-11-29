@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 import { getDatabaseCart } from '../../../utilities/databaseManager';
+import './Exam.css'
 const Exam = () => {
     const [cart, setCart] = useState([]);
     const itemData = localStorage.getItem('item')
@@ -74,9 +75,13 @@ const Exam = () => {
                 <form action="#" method="post" style={{fontSize: '20px',border:'1px solid white',padding:'40px',width:'100%',borderRadius:'50px',boxShadow:'5px 5px 20px gray',marginBottom:'50px'}}>
                <fieldset >
                 {/* <legend>Give your feedback</legend> */}
-                <p className="font-weight-bold">Ques no : {index +1} <br /> <span className="text-primary">{question.data.question}</span></p>
+                <p className="font-weight-bold mb-4">Ques no : {index +1} <br /> <span className="text-primary">{question.data.question}</span></p>
                 {
-                    question?.data?.answer.map(answer =><><input  onClick={()=>handleChange(question.data.question,answer)} type="radio" name="answer" />{answer}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</>)
+                    question?.data?.answer.map(answer =><>     <label className="rad-label">
+                    <input onClick={()=>handleChange(question.data.question,answer)} type="radio" className="rad-input" name="rad" />
+                    <div className="rad-design" />
+                    <div className="rad-text">{answer}</div>
+                  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</>)
                 }
 
 
@@ -87,7 +92,9 @@ const Exam = () => {
        
   
       {/* <input type="Submit" defaultValue="Proceed" /> */}
-            <button onClick={()=>handleSubmit()} className="btn btn-primary font-weight-bold">Submit</button>
+           {
+               question.length === 0 ? <div className="text-center text-primary"><h2>Loading...</h2></div>:  <button onClick={()=>handleSubmit()} className="btn btn-primary font-weight-bold">Submit</button>
+           }
         </div>
         </div>
         <Footer></Footer>
