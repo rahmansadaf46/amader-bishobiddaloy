@@ -35,7 +35,7 @@ const Home = () => {
             <Footer></Footer>
 
             <MessengerCustomerChat
-                pageId="102931898307109"
+                pageId="106496095168759"
                 appId="370328294888437"
             />
         </div>

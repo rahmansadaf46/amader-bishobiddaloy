@@ -73,12 +73,12 @@ const Header = ({ cart }) => {
                                 <div className="row">
                                      <div>
                                     
-                                         <Link to='/user/appointment' style={{ borderRadius: '30px' }} className="btn login ml-3"><b>Make an Appointment</b></Link>
+                                         <Link to='/user/appointment' style={{ borderRadius: '30px' }} onClick={() => handleWindow()} className="btn login ml-3"><b>Make an Appointment</b></Link>
                                     <Link to='/skillTest' onClick={() => handleWindow()} style={{ borderRadius: '30px' }} className="btn login ml-3 "><b>Test your skill</b></Link>
-                                    <Link to='/user/opinion' style={{ borderRadius: '30px' }} className="btn login ml-3 mr-3"><b>Profile</b></Link>
+                                    <Link to='/user/appointmentStatus' style={{ borderRadius: '30px' }} className="btn login ml-3 mr-3"><b>Profile</b></Link>
                                    </div>
                                     <Link to='/' onClick={logout} className="btn login ml-1" style={{ borderRadius: '30px', marginRight: '70px' }}><b>Log out</b></Link>
-                                  <p style={{ position: 'relative', left: '-45px', top: '7px', color: 'red' }}><b>{sessionStorage.getItem('name').split(" ").slice(0, 1)}</b></p>
+                                  <p style={{ position: 'relative', left: '-45px', top: '7px', color: 'blue' }}><b>{sessionStorage.getItem('name').split(" ").slice(0, 1)}</b></p>
                                 </div>
                                 :
                                 <div><Link to='/login' style={{ borderRadius: '30px' }} className="btn mr-3 login"><b>Login</b></Link>
@@ -92,7 +92,7 @@ const Header = ({ cart }) => {
                                 aria-haspopup="true"
                                 aria-expanded={open ? 'true' : undefined}
                                 onClick={handleClick}
-                                style={{  color: 'purple' }} 
+                                style={{  color: 'Blue' }} 
                             >
                                 <b>Order History</b>
                             </Button>

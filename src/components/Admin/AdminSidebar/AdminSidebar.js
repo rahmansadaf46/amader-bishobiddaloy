@@ -1,4 +1,6 @@
-import { faPlus, faCookieBite, faThList, faCheckCircle,faUserFriends} from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faCookieBite, 
+    // faThList,
+     faCheckCircle,faUserFriends} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -10,41 +12,52 @@ const AdminSidebar = () => {
             <ul className="list-unstyled py-3">
                 <li>
                     <Link to="/admin/pending" className="">
-                        <span style={{ color: 'blue', fontWeight: 'bold' }}><FontAwesomeIcon icon={faCookieBite} /> Pending Order</span>
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faCookieBite} /> Pending Order</span>
                     </Link>
                 </li>
                 <br />
                 <li>
                     <Link to="/admin/delivery" className="">
-                        <span style={{ color: 'blue', fontWeight: 'bold' }}><FontAwesomeIcon icon={faCheckCircle} /> Delivery Order</span>
+                        <span style={{ color: 'blue', fontWeight: 'bold' ,fontSize:'14px'}}><FontAwesomeIcon icon={faCheckCircle} /> Delivery Order</span>
                     </Link>
                 </li>
                 <br />
                 <li>
                     <Link to="/admin/addItem" className="">
-                        <span style={{ color: 'blue', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Book</span>
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faPlus} /> Add Book</span>
                     </Link>
                 </li>
                 <br />
                 <li>
                     <Link to="/admin/addQuestion" className="">
-                        <span style={{ color: 'blue', fontWeight: 'bold' }}><FontAwesomeIcon icon={faPlus} /> Add Question</span>
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faPlus} /> Add Question</span>
                     </Link>
                 </li>
-                <br />
+                {/* <br />
                 <li>
                     <Link to="/admin/itemList" className="">
-                        <span style={{ color: 'blue', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faThList} /> Book List</span>
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}> <FontAwesomeIcon icon={faThList} /> Book List</span>
                     </Link>
-                </li>
+                </li> */}
                 <br />
 
                 <li>
                     <Link to="/admin/addTeacher" className="">
-                        <span style={{color: 'blue', fontWeight: 'bold'}}> <FontAwesomeIcon icon={faUserFriends} /> Add Teacher</span>
+                        <span style={{color: 'blue', fontWeight: 'bold',fontSize:'14px'}}> <FontAwesomeIcon icon={faUserFriends} /> Add Teacher</span>
                     </Link>
                 </li>
-
+                <br />
+                <li>
+                    <Link to="/admin/pendingAppointment" className="">
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faCookieBite} /> Pending Appointment</span>
+                    </Link>
+                </li>
+                <br />
+                <li>
+                    <Link to="/admin/approvedAppointment" className="">
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faCheckCircle} /> Approved Appointment</span>
+                    </Link>
+                </li>
             </ul>
 
         </div>

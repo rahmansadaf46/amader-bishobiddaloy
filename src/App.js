@@ -22,6 +22,11 @@ import SignUp from "./components/Login/SignUp/SignUp";
 import Shipment from "./components/Shipment/Shipment/Shipment";
 import Appointment from "./components/Home/Appointment/Appointment";
 import Opinion from "./components/User/Opinion/Opinion";
+import TeacherProfile from "./components/Home/TeacherProfile/TeacherProfile";
+import PendingAppointment from "./components/Admin/PendingAppointment/PendingAppointment";
+import ApprovedAppointment from "./components/Admin/ApprovedAppointment/ApprovedAppointment";
+import AppointmentStatus from "./components/User/AppointmentStatus/AppointmentStatus";
+import OrderList from "./components/User/OrderList/OrderList";
 
 export const UserContext = createContext();
 
@@ -59,12 +64,22 @@ function App() {
           <Route path="/user/appointment">
             <Appointment />
           </Route>
+          <Route path="/user/teacher/:id">
+            <TeacherProfile />
+          </Route>
           <Route path="/admin/pending">
             <PendingOrder></PendingOrder>
           </Route>
           <Route path="/admin/delivery">
             <DeliveryOrder></DeliveryOrder>
           </Route>
+          <Route path="/admin/pendingAppointment">
+            <PendingAppointment />
+          </Route>
+          <Route path="/admin/approvedAppointment">
+            <ApprovedAppointment />
+          </Route>
+          
           <Route path="/admin/addItem">
             <AddItem/>
           </Route>
@@ -79,6 +94,12 @@ function App() {
           </Route>
           <Route path="/user/opinion">
             <Opinion/>
+          </Route>
+          <Route path="/user/appointmentStatus">
+            <AppointmentStatus/>
+          </Route>
+          <Route path="/user/orderList">
+            <OrderList/>
           </Route>
           <Route path="/">
             <Home></Home>

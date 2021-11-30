@@ -1,4 +1,6 @@
-import {     faCookieBite, faThList, faCheckCircle,faUserFriends} from '@fortawesome/free-solid-svg-icons';
+import {    
+    //  faCookieBite, 
+    faThList, faCheckCircle,faUserFriends} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -8,21 +10,16 @@ const UserSidebar = () => {
         <div className="sidebar d-flex  justify-content-center  py-5 px-4" style={{ height: "100vh" }}>
 
         <ul className="list-unstyled py-3">
+       
             <li>
-                <Link to="/user/appointment" className="">
-                    <span style={{ color: 'blue', fontWeight: 'bold' }}><FontAwesomeIcon icon={faCookieBite} /> Appointment</span>
-                </Link>
-            </li>
-            <br />
-            <li>
-                <Link to="/admin/customer" className="">
+                <Link to="/user/appointmentStatus" className="">
                     <span style={{color: 'blue', fontWeight: 'bold'}}> <FontAwesomeIcon icon={faUserFriends} /> Appointment Status</span>
                 </Link>
             </li>
             <br />
    
             <li>
-                <Link to="/admin/itemList" className="">
+                <Link to="/user/orderList" className="">
                     <span style={{ color: 'blue', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faThList} /> Order List</span>
                 </Link>
             </li>
