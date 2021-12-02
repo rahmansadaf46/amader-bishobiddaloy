@@ -20,7 +20,7 @@ const UserSidebar = () => {
    
             <li>
                 <Link to="/user/orderList" className="">
-                    <span style={{ color: 'blue', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faThList} /> Order List</span>
+                    <span style={{ color: 'blue', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faThList} /> Order Status</span>
                 </Link>
             </li>
             <br />

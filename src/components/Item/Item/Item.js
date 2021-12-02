@@ -50,6 +50,7 @@ const Item = () => {
             addToDatabaseCart(product._id, product.quantity);
         }
         setCart(newCart);
+        window.location.href="/checkout"
         // window.location.reload();
 
     }
@@ -71,7 +72,7 @@ const Item = () => {
     return (
         <div>
             <Header cart={cart.length}></Header>
-            <div  style={{ marginTop:'140px'}}className="container mb-5">
+            <div  style={{ marginTop:'40px'}}className="container mb-5">
                 <div className="row">
                     <div className="col-md-5">
                         <p style={{ fontSize: '35px' }} className="mt-4 ">{item.title}</p>
@@ -88,7 +89,7 @@ const Item = () => {
                                 </div>
                             </span>
                         </div>
-                        <button onClick={() => handleAddProduct(item)} style={{ backgroundColor: 'blue', color: 'white', borderRadius: '30px', height: '40px' }} className="btn btn-primary px-4 mt-3"><ShoppingCartIcon className="mr-2" /> Add</button>
+                        <button onClick={() => handleAddProduct(item)} style={{ backgroundColor: 'blue', color: 'white', borderRadius: '30px', height: '40px' }} className="btn btn-primary px-4 mt-3"><ShoppingCartIcon className="mr-2" /> Checkout</button>
                         
                     </div>
                     <div className="col-md-7 text-right">

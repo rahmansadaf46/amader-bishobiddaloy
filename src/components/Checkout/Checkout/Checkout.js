@@ -197,7 +197,7 @@ const Checkout = () => {
             <div style={{ display: checkoutData ? 'none' : 'block' }} >
 
             <form>
-            <div style={{ marginTop:'140px'}}className="container mb-5">
+            <div style={{ marginTop:'40px'}}className="container mb-5">
                 <div className="row">
                     <div className="col-md-6">
                         <h4>Edit Delivery Details</h4>
@@ -259,7 +259,7 @@ const Checkout = () => {
             </div>
             </form>
             </div>
-            <div style={{ display: checkoutData ? 'block' : 'none' ,marginTop:'200px' ,marginBottom:'170px'}} >
+            <div style={{ display: checkoutData ? 'block' : 'none' ,marginTop:'100px' ,marginBottom:'170px'}} >
             <div style={{width:'40%',border:'5px solid white',boxShadow:'5px 5px 100px gray',borderRadius:'50px'}} className="container p-5">
                         <div className="text-center text-primary"><h3>Payment Here</h3></div>
                         <br />

@@ -4,7 +4,8 @@
     text-decoration: none!important;
 }
 .cart :hover{
-    color: blue;
+    color:yellow;
+    font-size: 30px;
     
 }
 .login:hover{
@@ -32,4 +33,54 @@
     background-color: blue;
     color: white!important;
     border-radius: 30px;
+}
+.bc{
+    background-color: #0F1A50;  
+}
+
+.tc{
+    color:white;
+    padding:15px 20px;
+    font-size: 16px;
+}
+
+.hv:hover{
+    color:yellow;
+    font-size: 18px;
+}
+
+.navbar{
+    padding:5px;
+    height:100px;
+}
+
+.container-fluid{
+    height: 100px;
+}
+
+.lp{
+    margin-top: 40px;
+    width: 360px;
+   
+}
+
+.ip{
+    width:35px;
+}
+
+.hvv:hover{
+    background-color: black;
+    color:blanchedalmond
+}
+
+.drop-link{
+    color:white;
+/* position: relative; */
+/* bottom:4px; */
+    font-size: 16px;
+}
+.drop-link:hover{
+    color:yellow;
+    font-size: 18px;
+    text-decoration: none;
 }

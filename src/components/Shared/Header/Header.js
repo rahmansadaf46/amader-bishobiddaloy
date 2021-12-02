@@ -1,142 +1,178 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Form, Nav, Navbar, } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import {  Nav, Navbar, NavDropdown, } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import './Header.css'
-import logo from '../../../fakeData/images/Logo/projectlogohead.png'
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
+import logo from '../../../fakeData/images/Logo/projectlogo.png'
+// import Button from '@mui/material/Button';
+// import Menu from '@mui/material/Menu';
 // import MenuItem from '@mui/material/MenuItem';
 import { UserContext } from '../../../App';
 
 const Header = ({ cart }) => {
-    const [item, setItem] = useState([]);
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-    const [loggedInUser] = useContext(UserContext);
-   
-    useEffect(() => {
-        fetch('http://localhost:4200/allOrder')
-            .then(res => res.json())
-            .then(data => {
-                // if (data) {
-                //     localStorage.setItem('student', JSON.stringify(data));
+  // const [item, setItem] = useState([]);
+  // const [anchorEl, setAnchorEl] = React.useState(null);
+  // const open = Boolean(anchorEl);
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
+  const [loggedInUser] = useContext(UserContext);
 
-                // }
-                const email= sessionStorage.getItem('email')
-                const items = data.filter(item => item.finalData.email === email)
-                // console.log(items,data)
-                setItem(items.reverse());
-            })
-    }, [])
-    const logout = () => {
-        sessionStorage.clear();
-        localStorage.clear();
-        window.location.assign("/");
-    }
-    const handleWindow = () => {
-        window.scrollTo(0, 0);
-    }
+  // useEffect(() => {
+  //   fetch('http://localhost:4200/allOrder')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       // if (data) {
+  //       //     localStorage.setItem('student', JSON.stringify(data));
 
-    return (
-        <div>
-            <Navbar fixed="top" className=" bg-white" expand="lg">
-                <Navbar.Brand ><Link to='/'><img style={{ width: '80px', marginLeft: '90px' }} src={logo} alt="" /></Link></Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
+  //       // }
+  //       // const email = sessionStorage.getItem('email')
+  //       // const items = data.filter(item => item.finalData.email === email)
+  //       // console.log(items,data)
+  //       // setItem(items.reverse());
+  //     })
+  // }, [])
+  const logout = () => {
+    sessionStorage.clear();
+    localStorage.clear();
+    window.location.assign("/");
+  }
+  // const handleWindow = () => {
+  //   window.scrollTo(0, 0);
+  // }
 
+  return (
+    <div>
+      <nav className="navbar navbar-expand-lg bc">
+        <div className="container-fluid">
+          <img src={logo} alt="" className="lp" />
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
+           
+           
+            {loggedInUser.email === "admin@gmail.com" || sessionStorage.getItem('email') === "admin@gmail.com"  ?      <Link to='/admin/pending' style={{position: 'relative',top: '5px'}} className="cart text-white"><SupervisorAccountIcon /></Link> : <></>}
+        
+             
+              <li className="nav-item">
+                <a href="/" className="nav-link active tc hv" aria-current="page" >Home</a>
+              </li>
 
-                    </Nav>
-                    <Form inline>
-
-                        {loggedInUser.email === "admin@gmail.com" || sessionStorage.getItem('email') === "admin@gmail.com"  ?      <div className="mr-2">    <Link to='/admin/pending' className="cart "><SupervisorAccountIcon /></Link></div> : <></>}
-              
-
-                        {
-                            cart ? <div className="numberCircle" ><b>{cart}</b></div> : <div></div>
-
-                        }
-                       {
-                           cart > 0 &&  <Link to='/checkout' className="cart"><ShoppingCartIcon /></Link>
-                       }
-         
-                        {
-                            loggedInUser.email || sessionStorage.getItem('token') ?
-                                <div className="row">
-                                     <div>
-                                    
-                                         <Link to='/user/appointment' style={{ borderRadius: '30px' }} onClick={() => handleWindow()} className="btn login ml-3"><b>Make an Appointment</b></Link>
-                                    <Link to='/skillTest' onClick={() => handleWindow()} style={{ borderRadius: '30px' }} className="btn login ml-3 "><b>Test your skill</b></Link>
-                                    <Link to='/user/appointmentStatus' style={{ borderRadius: '30px' }} className="btn login ml-3 mr-3"><b>Profile</b></Link>
-                                   </div>
-                                    <Link to='/' onClick={logout} className="btn login ml-1" style={{ borderRadius: '30px', marginRight: '70px' }}><b>Log out</b></Link>
-                                  <p style={{ position: 'relative', left: '-45px', top: '7px', color: 'blue' }}><b>{sessionStorage.getItem('name').split(" ").slice(0, 1)}</b></p>
-                                </div>
-                                :
-                                <div><Link to='/login' style={{ borderRadius: '30px' }} className="btn mr-3 login"><b>Login</b></Link>
-                                    <Link to='/signup' style={{ borderRadius: '30px', marginRight: '70px' }} className="btn login"><b>Sign Up</b></Link></div>
-                        }
-                        {
-                           loggedInUser.email || sessionStorage.getItem('token') ? <div>
-                            <Button
-                                id="demo-customized-button"
-                                aria-controls="basic-menu"
-                                aria-haspopup="true"
-                                aria-expanded={open ? 'true' : undefined}
-                                onClick={handleClick}
-                                style={{  color: 'Blue' }} 
-                            >
-                                <b>Order History</b>
-                            </Button>
-                            <Menu
-                                id="basic-menu"
-                                anchorEl={anchorEl}
-                                open={open}
-                                onClose={handleClose}
-                                MenuListProps={{
-                                    'aria-labelledby': 'basic-button',
-                                }}
-                                style={{ width: '75%',padding:'10px' }}
-                            >
-                                {
-                                    item.reverse().map(fd=><div style={{ width: '450px',height: '100%' ,border: '3px solid brown',backgroundColor: 'lightYellow',marginBottom: '25px',padding: '30px'}}>
-                                         <div className="font-weight-bold mb-4">Order No: <span style={{color: 'purple'}}>{fd._id.split("").slice(15, 50)}</span></div>  
-                                        {fd.finalData.cart.map(item=><p style={{fontSize: '18px'}}><span className="font-weight-bold text-primary">{item.title}</span> <span className="font-weight-bold text-dark">: {item.quantity}pcs</span></p>)} <br />
-                                        <div className="row">
-                                        <div className="col-md-6">
-                                        <p className="mt-2 font-weight-bold">Status: {
-                                            fd.finalData.status === "Pending" ? <span className="text-danger">{fd.finalData.status}</span> : <span className="text-success">{fd.finalData.status}</span>
-                                        } </p>
-                                        </div>
-                                        <div className="col-md-6 d-flex justify-content-end">
- 
-                                        <p className="mt-2 font-weight-bold">Amount: <span className="text-primary">{fd.finalData.amount}$</span></p>
-                                        </div>
-                                        </div>
-                                      
-                                        </div>)
-                                }
-                                {
-                                    item.length === 0 && <div class="text-primary text-center"  style={{  width: '350px',height: '100%' ,border: '3px solid brown',backgroundColor: 'lightYellow',marginBottom: '25px',padding: '30px'}}><h3>No History Found</h3></div>
-                                }
-                
-                            </Menu>
-                        </div> : <></>
-                        }
-
-                    </Form>
+              {/* <li className="nav-item">
+                <a href="/user/appointmentStatus" className="nav-link active tc hv" aria-current="page" >Profile</a>
+              </li> */}
+              <li className="nav-item dropdown ">
+              <Navbar.Collapse id="navbar-dark-example">
+                  <Nav>
+                    <NavDropdown
+                      id="nav-dropdown-dark-example"
+                      title={<a href="." className="drop-link">
+                        Varsity List
+                      </a>}
+                      menuVariant="white"
+                    // style={{position: "relative",bottom:'9px',color:'white'}}
+                    >
+                      <NavDropdown.Item href="/publicList">Public Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/privateList">Private Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/nationalList">National Varsity</NavDropdown.Item>
+                      {/* <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
+                    </NavDropdown>
+                  </Nav>
                 </Navbar.Collapse>
-            </Navbar>
+              </li>
+              <li className="nav-item dropdown">
+                <Navbar.Collapse id="navbar-dark-example">
+                  <Nav>
+                    <NavDropdown
+                      id="nav-dropdown-dark-example"
+                      title={<a href="."  className="drop-link">
+                        Varsity Ranking
+                      </a>}
+                      menuVariant="white"
+                    >
+                      <NavDropdown.Item href="/publicRanking">Public Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/privateRanking">Private Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/nationalRanking">National Varsity</NavDropdown.Item>
+                    </NavDropdown>
+                  </Nav>
+                </Navbar.Collapse>
+                {/* <a className="nav-link dropdown-toggle tc hv"   id="dropdown-basic" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Varsity Ranking
+                </a>
+                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a className="dropdown-item hvv " href="#/action-1">Public Varsity</a></li>
+                  <li><a className="dropdown-item hvv" href="#/action-2">Private Varsity</a></li>
+                  <li><a className="dropdown-item hvv" href="#/action-3">National Varsity</a></li>
+                </ul> */}
+              </li>
+              <li className="nav-item">
+              <Navbar.Collapse id="navbar-dark-example">
+                  <Nav>
+                    <NavDropdown
+                      id="nav-dropdown-dark-example"
+                      title={<a href="."  className="drop-link">
+                      Admission Time &amp; Date
+                      </a>}
+                      menuVariant="white"
+                    >
+                      <NavDropdown.Item href="/publicAdmission">Public Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/privateAdmission">Private Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/nationalAdmission">National Varsity</NavDropdown.Item>
+                    </NavDropdown>
+                  </Nav>
+                </Navbar.Collapse>
+                {/* <a className="nav-link active tc hv" role="button">Admission Time &amp; Date</a> */}
+              </li>
+              <li className="nav-item">
+                <a href="."  className="nav-link active tc hv " role="button">Question Bank</a>
+              </li>
+              {
+                loggedInUser.email || sessionStorage.getItem('token') ? <>
+                  <li className="nav-item">
+                    <a href="/user/appointment" className="nav-link active tc hv" aria-current="page" >Appointment</a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="/skillTest" className="nav-link active tc hv" aria-current="page" >Skill Test</a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="/user/appointmentStatus" className="nav-link active tc hv" aria-current="page" >Profile</a>
+                  </li>
+                  <li className="nav-item">
+                    <a href="/" onClick={logout} className="nav-link active tc hv" role="button">Log Out</a>
+                  </li>
+                  {/* <li className="nav-item">
+                    <p style={{ position: 'relative', left: '45px', top: '17px', color: 'white' }}><b>{sessionStorage.getItem('name').split(" ").slice(0, 1)}</b></p>
+                  </li> */}
+                </> : <> <li className="nav-item">
+                  <a href="/login" className="nav-link active tc hv" role="button">Log In</a>
+                </li>
+                  <li className="nav-item">
+                    <a href="/signup" className="nav-link active tc hv" role="button">Sign Up</a>
+                  </li></>
+              }
+
+            </ul>
+            {/* <a href="#" className="tie-search-trigger-mobile">
+        <span className="tie-icon-search tie-search-icon" aria-hidden="true" />
+        <span className="screen-reader-text"><img src="images/iconi.png" className="ip" /></span>
+      </a> */}
+     
+          </div>
         </div>
-    );
+        {
+                            loggedInUser.email || sessionStorage.getItem('token') ?
+                            <p style={{ position: 'relative', left: '-45px', top: '10px', color: 'orange' }}><b>{sessionStorage.getItem('name').split(" ").slice(0, 1)}</b></p>
+                                :
+                                <></>
+                        }
+        {/* <small>hello</small> */}
+      </nav>
+    </div>
+  );
 };
 
 export default Header;

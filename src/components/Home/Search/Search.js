@@ -8,7 +8,7 @@ import image5 from '../../../fakeData/images/images/JU.jpg';
 
 const Search = () => {
     return (
-        <div style={{ marginTop: '68px' }} >
+        <div style={{}} >
             <div style={{ margin: '0 auto', textAlign: 'center' }} className="">
                 <Carousel>
                     <Carousel.Item>

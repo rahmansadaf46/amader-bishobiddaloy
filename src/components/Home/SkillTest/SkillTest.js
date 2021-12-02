@@ -18,7 +18,7 @@ const SkillTest = () => {
     return (
         <div>
         <Header cart={cart.length}></Header>
-        <div style={{marginTop:'100px',marginBottom:'100px'}} className="container py-5 d-flex justify-content-center">
+        <div style={{marginTop:'50px',marginBottom:'100px'}} className="container py-5 d-flex justify-content-center">
         <div style={{border:'1px solid white',padding:'50px',width:'50%',borderRadius:'50px',boxShadow:'5px 5px 20px gray'}} className="text-center">
             <p className="font-weight-bold ">You have to answer all the question for test your skills</p>
             <button onClick={() =>window.location.assign('/exam')} className="btn btn-primary font-weight-bold">Proceed</button>

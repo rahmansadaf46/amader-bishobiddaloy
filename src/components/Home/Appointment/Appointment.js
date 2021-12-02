@@ -241,7 +241,7 @@ const Appointment = () => {
     return (
         <div>
             <Header cart={cart.length}></Header>
-            <div className="d-flex justify-content-center" style={{ marginTop: '150px', height: "50px" }} >
+            <div className="d-flex justify-content-center" style={{ marginTop: '50px', height: "50px" }} >
                 <form className="form-group">
                     <div className="container">
                         <div className="form-inline d-flex justify-content-start">

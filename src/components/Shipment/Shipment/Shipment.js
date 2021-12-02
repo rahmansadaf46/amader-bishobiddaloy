@@ -12,7 +12,7 @@ const Shipment = () => {
     return (
         <div>
             <Header></Header>
-            <div className="mt-5 py-5">
+            <div className=" py-5">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-7 mr-5">

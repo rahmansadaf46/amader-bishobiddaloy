@@ -45,7 +45,7 @@ const Menu = () => {
 
 
     return (
-        <div className="mt-5">
+        <div className="menuBody"  >
            
 
             <div className="container mt-5">
@@ -62,11 +62,11 @@ const Menu = () => {
 
             {
                 cart.length > 0 ? <div className="text-center my-4">
-                    <Link to='/checkout' style={{ color: 'white' }} className="btn btn-primary px-5">Checkout Your Book</Link>
+                    <Link to='/checkout'  className="btn btn-primary px-5">Checkout Your Book</Link>
                 </div>
                     :
                     <div className="text-center my-4">
-                        <Link style={{ backgroundColor: 'gray', color: 'white', outline: 'none' }} className="btn  px-5">Checkout Your Book</Link>
+                        <button style={{ backgroundColor: 'gray', color: 'white', outline: 'none' }} className="btn  px-5">Checkout Your Book</button>
                     </div>
             }
         </div>

@@ -5,11 +5,11 @@ import './MenuItem.css';
 
 const MenuItem = ({ item }) => {
     return (
-        <div className="col-md-4 d-flex justify-content-center item mb-3">
-            <Link to={`/item/${item._id}`} className="card-item">
-                <Card style={{ width: '20rem', border: 'none' }}>
+        <div className="col-md-4 d-flex justify-content-center  mb-3">
+            <Link to={`/item/${item._id}`} className="card-item item">
+                <Card className="menuCard" style={{ width: '20rem', border: 'none' }}>
                     <div className="px-5 py-3">
-                        <Card.Img variant="top" src={`http://localhost:4200/${item.image}`}  />
+                        <Card.Img className="img" variant="top" src={`http://localhost:4200/${item.image}`}  />
                     </div>
                     <Card.Body>
                         <Card.Title><div style={{ fontSize: '17px' }} className="text-center">

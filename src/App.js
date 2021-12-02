@@ -27,6 +27,21 @@ import PendingAppointment from "./components/Admin/PendingAppointment/PendingApp
 import ApprovedAppointment from "./components/Admin/ApprovedAppointment/ApprovedAppointment";
 import AppointmentStatus from "./components/User/AppointmentStatus/AppointmentStatus";
 import OrderList from "./components/User/OrderList/OrderList";
+import AboutUs from "./components/AboutUs/AboutUs";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy";
+import TermsCondition from "./components/TermsCondition/TermsCondition";
+import PrivateRanking from "./components/Ranking/PrivateRanking/PrivateRanking";
+import NationalRanking from "./components/Ranking/NationalRanking/NationalRanking";
+import PublicRanking from "./components/Ranking/PublicRanking/PublicRanking";
+import NationalList from "./components/VarsityList/National/NationalList";
+import PrivateList from "./components/VarsityList/Private/PrivateList";
+import PublicList from "./components/VarsityList/Public/PublicList";
+import PublicAdmission from "./components/Admission/PublicAdmission/PublicAdmission";
+import PrivateAdmission from "./components/Admission/PrivateAdmission/PrivateAdmission";
+import NationalAdmission from "./components/Admission/NationalAdmission/NationalAdmission";
+import PrivateHomepage from "./components/Homepage/PrivateHomepage/PrivateHomepage";
+import PublicHomepage from "./components/Homepage/PublicHomepage/PublicHomepage";
+import NationalHomePage from "./components/Homepage/NationalHomepage/NationalHomePage";
 
 export const UserContext = createContext();
 
@@ -46,12 +61,12 @@ function App() {
           <Route path="/signup">
             <SignUp></SignUp>
           </Route>
-          <Route path="/skillTest">
+          <PrivateRoute path="/skillTest">
            <SkillTest/>
-          </Route>
-          <Route path="/exam">
+          </PrivateRoute>
+          <PrivateRoute path="/exam">
            <Exam/>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/checkout">
             <Checkout></Checkout>
           </PrivateRoute>
@@ -61,9 +76,9 @@ function App() {
           <Route path="/shipment">
             <Shipment></Shipment>
           </Route>
-          <Route path="/user/appointment">
+          <PrivateRoute path="/user/appointment">
             <Appointment />
-          </Route>
+          </PrivateRoute>
           <Route path="/user/teacher/:id">
             <TeacherProfile />
           </Route>
@@ -100,6 +115,52 @@ function App() {
           </Route>
           <Route path="/user/orderList">
             <OrderList/>
+          </Route>
+          
+          <Route path="/publicRanking">
+            <PublicRanking />
+          </Route>
+          <Route path="/privateRanking">
+            <PrivateRanking />
+          </Route>
+          <Route path="/nationalRanking">
+            <NationalRanking />
+          </Route>
+          <Route path="/nationalList">
+            <NationalList />
+          </Route>
+          <Route path="/privateList">
+            <PrivateList />
+          </Route>
+          <Route path="/publicList">
+            <PublicList />
+          </Route>
+          <Route path="/publicAdmission">
+            <PublicAdmission />
+          </Route>
+          <Route path="/privateAdmission">
+            <PrivateAdmission />
+          </Route>
+          <Route path="/nationalAdmission">
+            <NationalAdmission />
+          </Route>
+          <Route path="/privateHomepage">
+            <PrivateHomepage />
+          </Route>
+          <Route path="/publicHomepage">
+            <PublicHomepage />
+          </Route>
+          <Route path="/nationalHomepage">
+            <NationalHomePage />
+          </Route>
+          <Route path="/aboutUs">
+            <AboutUs />
+          </Route>
+          <Route path="/privacyPolicy">
+            <PrivacyPolicy />
+          </Route>
+          <Route path="/terms">
+            <TermsCondition />
           </Route>
           <Route path="/">
             <Home></Home>

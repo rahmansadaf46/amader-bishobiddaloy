@@ -10,6 +10,7 @@ import { UserContext } from '../../../App';
 // import fakeData from '../../../fakeData';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import OpinionList from '../OpinionList/OpinionList';
+import Details from '../Details/Details';
 const Home = () => {
     const [cart, setCart] = useState([]);
     const itemData = localStorage.getItem('item')
@@ -28,6 +29,7 @@ const Home = () => {
         <div>
             <Header cart={cart.length}></Header>
             <Search></Search>
+            <Details></Details>
             {loggedInUser.email || sessionStorage.getItem('token') ? <Menu></Menu> : <></>}
 
             {/* <About></About> */}
