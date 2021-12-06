@@ -84,7 +84,7 @@ const TeacherProfile = () => {
     return (
         <div>
         <Header cart={cart.length}></Header>
-        <div style={{marginTop:'100px',marginBottom:'100px'}} className="container py-5 d-flex justify-content-center">
+        <div style={{marginTop:'20px',marginBottom:'100px'}} className="container py-5 d-flex justify-content-center">
             <div style={{border: '5px solid lightGray',height:'450px',width:'900px',borderRadius:'30px',textAlign:'center',fontWeight:'bold',fontSize:'30px',padding:'30px'}}>
                 <p className="text-primary">Teacher Name: <span className="text-info" style={{}}>{teacher.teacherName}</span></p>
     

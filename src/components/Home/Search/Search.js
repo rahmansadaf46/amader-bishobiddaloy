@@ -5,12 +5,27 @@ import image2 from '../../../fakeData/images/images/DU.jpg';
 import image3 from '../../../fakeData/images/images/eden.jpg';
 import image4 from '../../../fakeData/images/images/JNU.jpg';
 import image5 from '../../../fakeData/images/images/JU.jpg';
-
+import amaderiBisshobiddaloy from '../../../fakeData/images/images/amaderiBisshobiddaloy.jpeg';
 const Search = () => {
     return (
         <div style={{}} >
             <div style={{ margin: '0 auto', textAlign: 'center' }} className="">
                 <Carousel>
+                <Carousel.Item>
+                        <img
+
+                            className="d-block cari"
+                            src={amaderiBisshobiddaloy}
+                            alt="..."
+                        />
+                        {/* <div className="carousel-caption d-none d-md-block carousel-like">
+                            <p>“Start where you are. Use what you have. Do what you can.”</p>
+                            <h4>― Arthur Ashe</h4>
+                        </div> */}
+                        <Carousel.Caption>
+
+                        </Carousel.Caption>
+                    </Carousel.Item>
                     <Carousel.Item>
                         <img
 

@@ -9,7 +9,7 @@ const PublicRanking = () => {
             <Header></Header>
             <div>
   <div className="rankingheader">
-    <h1>Top 10 Private Universities 2021 Ranking in Bangladesh</h1>
+    <h1>Top 10 Public Universities 2021 Ranking in Bangladesh</h1>
     <p>Updated on June 13th, 2021</p>
   </div>
   <div className="rankingimage">

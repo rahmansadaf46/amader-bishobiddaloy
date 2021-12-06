@@ -5,6 +5,8 @@ import { getDatabaseCart } from '../../../utilities/databaseManager';
 import './Exam.css'
 const Exam = () => {
     const [cart, setCart] = useState([]);
+    const [result, setResult] =useState(false)
+    const [resultCount, setResultCount] = useState("");
     const itemData = localStorage.getItem('item')
     useEffect(() => {
         const savedCart = getDatabaseCart();
@@ -61,17 +63,37 @@ const Exam = () => {
     const handleSubmit = () => {
         console.log(answer)
         const result = answer.filter(ans=> ans.answer === 'Right')
-        alert(`Your result is ${result.length}/${question.length}`)
-        window.location.assign('/')
+        // alert(`Your result is ${result.length}/${question.length}`)
+        // window.location.assign('/')
+        setResultCount(result.length)
+        setResult(true)
+
     }
+    function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle...
+        while (currentIndex !== 0) {
+      
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array?.slice(0,20);
+      }
     return (
         <div>
         <Header cart={cart.length}></Header>
-        <div style={{marginTop:'100px',marginBottom:'100px'}} className="container py-5 d-flex justify-content-center">
+        <div style={{marginTop:'100px',marginBottom:'100px',display: result ?  'none' :'flex'}} className="container py-5  justify-content-center">
         <div style={{}} className="text-center">
        
             {
-               question?.map((question,index) =>
+               shuffle(question)?.map((question,index) =>
                 <form action="#" method="post" style={{fontSize: '20px',border:'1px solid white',padding:'40px',width:'100%',borderRadius:'50px',boxShadow:'5px 5px 20px gray',marginBottom:'50px'}}>
                <fieldset >
                 {/* <legend>Give your feedback</legend> */}
@@ -88,6 +110,7 @@ const Exam = () => {
               </fieldset>    </form>) 
                  
             }
+           
         <br />
        
   
@@ -97,6 +120,12 @@ const Exam = () => {
            }
         </div>
         </div>
+           <div style={{display: result ?  'flex' :'none',marginTop:'50px',marginBottom:'100px'}} className=" justify-content-center container py-5">
+           <div style={{border:'1px solid white',padding:'50px',width:'50%',borderRadius:'50px',boxShadow:'5px 5px 20px gray'}} className="text-center">
+            <p style={{fontSize:'30px'}} className="font-weight-bold text-dark">Your result is <span className="text-success">{resultCount}</span>/<span className="text-danger  ">{question.length}</span></p>
+            <button onClick={() =>window.location.assign('/skillTest')} className="btn btn-warning font-weight-bold">Again Test Your Skill</button>
+        </div>
+           </div>
         <Footer></Footer>
     </div>
     );

@@ -6,7 +6,7 @@ import logo from '../../../fakeData/images/Logo/projectlogoheading.png';
 const AdminHeader = () => {
     // const [loggedInUser] = useContext(UserContext);
     return (
-        <section style={{height: '70px'}} className='row'>
+        <section style={{height: '70px'}} className='d-flex'>
             <div className="col-md-2 mb-4">
                 <Link className="ml-4" to="/">
                     <img style={{ width: '190px'}} src={logo} alt="" />

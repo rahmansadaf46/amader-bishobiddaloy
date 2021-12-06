@@ -1,4 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { 
+    useContext, 
+    useEffect, useState } from 'react';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 
@@ -8,9 +10,10 @@ import Search from '../Search/Search';
 import { getDatabaseCart } from '../../../utilities/databaseManager';
 import { UserContext } from '../../../App';
 // import fakeData from '../../../fakeData';
-import MessengerCustomerChat from 'react-messenger-customer-chat';
+// import MessengerCustomerChat from 'react-messenger-customer-chat';
 import OpinionList from '../OpinionList/OpinionList';
 import Details from '../Details/Details';
+// import QuestionHome from '../QuestionHome/QuestionHome';
 const Home = () => {
     const [cart, setCart] = useState([]);
     const itemData = localStorage.getItem('item')
@@ -30,16 +33,17 @@ const Home = () => {
             <Header cart={cart.length}></Header>
             <Search></Search>
             <Details></Details>
+            {/* <Menu></Menu> */}
             {loggedInUser.email || sessionStorage.getItem('token') ? <Menu></Menu> : <></>}
-
             {/* <About></About> */}
             <OpinionList />
+            {/* <QuestionHome/> */}
             <Footer></Footer>
 
-            <MessengerCustomerChat
+            {/* <MessengerCustomerChat
                 pageId="106496095168759"
                 appId="370328294888437"
-            />
+            /> */}
         </div>
     );
 };

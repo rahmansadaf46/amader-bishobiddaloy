@@ -56,7 +56,7 @@ const AddItem = () => {
     return (
         <div>
         <AdminHeader />
-        <div className="row">
+        <div className="d-flex">
         <div className="col-md-2">
                <AdminSidebar />
            </div>
@@ -102,7 +102,7 @@ const AddItem = () => {
                                                            
                                                         </div>
                                         <div className="form-group col-md-12 mt-4 pt-1 d-flex justify-content-center">
-                                            <button type="submit" style={{ padding: '10px 90px',borderRadius:'40px' }} className="btn text-white btn-primary font-weight-bold">Upload</button>
+                                            <button type="submit" style={{ padding: '10px 90px',borderRadius:'40px' }} className="btn btn-primary font-weight-bold">Upload</button>
                                         </div>
                                     </div>
 

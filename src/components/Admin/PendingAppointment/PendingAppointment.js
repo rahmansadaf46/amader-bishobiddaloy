@@ -57,7 +57,7 @@ const PendingAppointment = () => {
     return (
         <div>
             <AdminHeader />
-            <div className="row">
+            <div className="d-flex">
                 <div className="col-md-2">
                     <AdminSidebar />
                 </div>

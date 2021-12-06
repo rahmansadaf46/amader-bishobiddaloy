@@ -18,7 +18,7 @@ const PrivacyPolicy = () => {
                         <img src={privacy} alt="" />
                     </div>
                     <div className="halfwidth">
-                        <h2>Privacy Policy for Aamaderi Bissobiddaloy</h2>
+                        <h2>Privacy Policy for Amaderi Biswobidyaloy</h2>
                         <p>If you require any more information or have any questions about our privacy policy, please feel free to contact us by email at amaderibissobiddaloy@gmail.com
                             <br />
                             <br />

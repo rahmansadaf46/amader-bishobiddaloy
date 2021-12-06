@@ -11,8 +11,8 @@
 }
 .btn:hover{
     color:brown;
-    background-color: cornsilk;
-    font-size: 20px;
+    background-color: rgb(255, 220, 226);
+    /* font-size: 20px; */
     font-weight: bolder;
 }
 .card{

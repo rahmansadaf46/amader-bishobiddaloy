@@ -1,6 +1,8 @@
 import { faPlus, faCookieBite, 
-    // faThList,
-     faCheckCircle,faUserFriends} from '@fortawesome/free-solid-svg-icons';
+    faThList,
+     faCheckCircle,
+    //  faUserFriends
+    } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -33,6 +35,42 @@ const AdminSidebar = () => {
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faPlus} /> Add Question</span>
                     </Link>
                 </li>
+                <br />
+                {/* <li>
+                    <Link to="/admin/addQuestion" className="">
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faPlus} /> Add University</span>
+                    </Link>
+                </li>
+                <br /> */}
+                <li>
+                    <Link to="/admin/addTeacher" className="">
+                        <span style={{color: 'blue', fontWeight: 'bold',fontSize:'14px'}}> <FontAwesomeIcon icon={faPlus} /> Add Teacher</span>
+                    </Link>
+                </li>
+                <br />
+                <li>
+                    <Link to="/admin/questionList" className="">
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> Question List</span>
+                    </Link>
+                </li>
+                {/* <br />
+                <li>
+                    <Link to="/admin/teacherList" className="">
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> Teacher List</span>
+                    </Link>
+                </li> */}
+                {/* <br />
+                <li>
+                    <Link to="/admin/itemList" className="">
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> Book List</span>
+                    </Link>
+                </li> */}
+                {/* <br />
+                <li>
+                    <Link to="/admin/teacherList" className="">
+                        <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> University List</span>
+                    </Link>
+                </li> */}
                 {/* <br />
                 <li>
                     <Link to="/admin/itemList" className="">
@@ -41,12 +79,7 @@ const AdminSidebar = () => {
                 </li> */}
                 <br />
 
-                <li>
-                    <Link to="/admin/addTeacher" className="">
-                        <span style={{color: 'blue', fontWeight: 'bold',fontSize:'14px'}}> <FontAwesomeIcon icon={faUserFriends} /> Add Teacher</span>
-                    </Link>
-                </li>
-                <br />
+              
                 <li>
                     <Link to="/admin/pendingAppointment" className="">
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faCookieBite} /> Pending Appointment</span>

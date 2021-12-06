@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <MessengerCustomerChat
+      pageId="106496095168759"
+      appId="370328294888437"
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );

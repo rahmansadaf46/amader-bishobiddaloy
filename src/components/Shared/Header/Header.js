@@ -54,7 +54,7 @@ const Header = ({ cart }) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ">
            
            
-            {loggedInUser.email === "admin@gmail.com" || sessionStorage.getItem('email') === "admin@gmail.com"  ?      <Link to='/admin/pending' style={{position: 'relative',top: '5px'}} className="cart text-white"><SupervisorAccountIcon /></Link> : <></>}
+            {loggedInUser.email === "admin@gmail.com" || sessionStorage.getItem('email') === "admin@gmail.com"  ?      <Link to='/admin/pending' style={{position: 'relative',top: '12px'}} className="cart text-white"><SupervisorAccountIcon /></Link> : <></>}
         
              
               <li className="nav-item">
@@ -64,52 +64,52 @@ const Header = ({ cart }) => {
               {/* <li className="nav-item">
                 <a href="/user/appointmentStatus" className="nav-link active tc hv" aria-current="page" >Profile</a>
               </li> */}
-              <li className="nav-item dropdown ">
+              <li style={{position: 'relative', top:'8px'}} className="nav-item dropdown ">
               <Navbar.Collapse id="navbar-dark-example">
                   <Nav>
                     <NavDropdown
                       id="nav-dropdown-dark-example"
                       title={<a href="." className="drop-link">
-                        Varsity List
+                        University List
                       </a>}
                       menuVariant="white"
                     // style={{position: "relative",bottom:'9px',color:'white'}}
                     >
-                      <NavDropdown.Item href="/publicList">Public Varsity</NavDropdown.Item>
-                      <NavDropdown.Item href="/privateList">Private Varsity</NavDropdown.Item>
-                      <NavDropdown.Item href="/nationalList">National Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/publicList">Public University</NavDropdown.Item>
+                      <NavDropdown.Item href="/privateList">Private University</NavDropdown.Item>
+                      <NavDropdown.Item href="/nationalList">National University</NavDropdown.Item>
                       {/* <NavDropdown.Divider />
           <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>
               </li>
-              <li className="nav-item dropdown">
+              <li style={{position: 'relative', top:'8px'}} className="nav-item dropdown">
                 <Navbar.Collapse id="navbar-dark-example">
                   <Nav>
                     <NavDropdown
                       id="nav-dropdown-dark-example"
                       title={<a href="."  className="drop-link">
-                        Varsity Ranking
+                        University Ranking
                       </a>}
                       menuVariant="white"
                     >
-                      <NavDropdown.Item href="/publicRanking">Public Varsity</NavDropdown.Item>
-                      <NavDropdown.Item href="/privateRanking">Private Varsity</NavDropdown.Item>
-                      <NavDropdown.Item href="/nationalRanking">National Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/publicRanking">Public University</NavDropdown.Item>
+                      <NavDropdown.Item href="/privateRanking">Private University</NavDropdown.Item>
+                      <NavDropdown.Item href="/nationalRanking">National University</NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>
                 {/* <a className="nav-link dropdown-toggle tc hv"   id="dropdown-basic" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Varsity Ranking
+                  University Ranking
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item hvv " href="#/action-1">Public Varsity</a></li>
-                  <li><a className="dropdown-item hvv" href="#/action-2">Private Varsity</a></li>
-                  <li><a className="dropdown-item hvv" href="#/action-3">National Varsity</a></li>
+                  <li><a className="dropdown-item hvv " href="#/action-1">Public University</a></li>
+                  <li><a className="dropdown-item hvv" href="#/action-2">Private University</a></li>
+                  <li><a className="dropdown-item hvv" href="#/action-3">National University</a></li>
                 </ul> */}
               </li>
-              <li className="nav-item">
+              <li style={{position: 'relative', top:'8px'}} className="nav-item">
               <Navbar.Collapse id="navbar-dark-example">
                   <Nav>
                     <NavDropdown
@@ -119,16 +119,16 @@ const Header = ({ cart }) => {
                       </a>}
                       menuVariant="white"
                     >
-                      <NavDropdown.Item href="/publicAdmission">Public Varsity</NavDropdown.Item>
-                      <NavDropdown.Item href="/privateAdmission">Private Varsity</NavDropdown.Item>
-                      <NavDropdown.Item href="/nationalAdmission">National Varsity</NavDropdown.Item>
+                      <NavDropdown.Item href="/publicAdmission">Public University</NavDropdown.Item>
+                      <NavDropdown.Item href="/privateAdmission">Private University</NavDropdown.Item>
+                      <NavDropdown.Item href="/nationalAdmission">National University</NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
                 </Navbar.Collapse>
                 {/* <a className="nav-link active tc hv" role="button">Admission Time &amp; Date</a> */}
               </li>
               <li className="nav-item">
-                <a href="."  className="nav-link active tc hv " role="button">Question Bank</a>
+                <a href="/questionBank"  className="nav-link active tc hv " role="button">Question Bank</a>
               </li>
               {
                 loggedInUser.email || sessionStorage.getItem('token') ? <>

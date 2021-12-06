@@ -63,10 +63,10 @@ const AboutUs = () => {
         <div className="qdv">
           <div>
             <h2>What is Aamderi Bissobiddaloy?</h2>
-            <p>Think about the name Admissionwar. The name gives you the concept of the competition of university admission test in Bangladesh. Literally this is a war. Not a war with guns and soldier this is a war of intelligence ,war of  students to prove themselves the best candidate to get admit in Public University. The admissionwar is a very useful tool to get all updates about university admission. Not only university admission but also all education sector of Bangladesh.It is an internet based service to provide all education sector’s information of Bangladesh.</p>
+            <p>Think about the name Aamderi Bissobiddaloy. The name gives you the concept of the competition of university admission test in Bangladesh. Literally this is a war. Not a war with guns and soldier this is a war of intelligence ,war of  students to prove themselves the best candidate to get admit in Public University. The admissionwar is a very useful tool to get all updates about university admission. Not only university admission but also all education sector of Bangladesh.It is an internet based service to provide all education sector’s information of Bangladesh.</p>
           </div>
           <div>
-            <h2>Aamaderi Bissobiddaloy for whom?</h2>
+            <h2>Amaderi Biswobidyaloy for whom?</h2>
             <p>Students are very busy and anxious about their study in their hard time like university admission test.They need a system which provides information without any effort and the system must will be time effective. Yes admission war is such type of information service that provides updated informations to the students in a time optimized way. Students will get the latest update about their education with only one click.
               <br />
               <br />

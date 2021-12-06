@@ -45,8 +45,10 @@ const Menu = () => {
 
 
     return (
-        <div className="menuBody"  >
-           
+        <div className="menuBody container mt-5"  >
+                       <div className="vsl mb-5">
+            <h1>Book Collection</h1>
+          </div>
 
             <div className="container mt-5">
             {

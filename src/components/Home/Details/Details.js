@@ -19,6 +19,7 @@ import uttora from '../../../fakeData/images/images/uttora.jpg'
 import dhakacollege from '../../../fakeData/images/images/dhakacollege.jpg'
 import lalmatia from '../../../fakeData/images/images/lalmatia.jpg'
 import eden from '../../../fakeData/images/images/eden.jpg'
+import QuestionHome from '../QuestionHome/QuestionHome';
 
 
 
@@ -30,7 +31,7 @@ const Details = () => {
         <div className="mx-5 details">
         {/*Varsity List*/}
         <div className="vsl">
-          <h1>Varsity List</h1>
+          <h1>University List</h1>
         </div>
         <div className="divon">
           <h2 className="listh">Public University</h2>
@@ -183,7 +184,7 @@ const Details = () => {
         {/*Varsity Ranking*/}
         <div>
           <div className="vsl">
-            <h1>Varsity Ranking</h1>
+            <h1>University Ranking</h1>
           </div>
           <div className="vsr">
             <p>According to the university list of UGC Bangladesh, there are 46 public universities and 92 private universities in Bangladesh.This ranking of Universities in Bangladesh is based on Web o Matrics. From this list you will be able to find out the particular university ranking, You also get data of university types which may help you to create a new list of private or public university rankings.</p>
@@ -272,14 +273,14 @@ const Details = () => {
           </div>
           <div className="card text-center adcolor1">
             <div className="card-body">
-              <h5 className="cardad">*Dhaka University Admission Test 2020-2021 time&amp; date schedule*</h5>
+              <h5 className="cardad">*Public University Admission Test 2020-2021 time&amp; date schedule*</h5>
               <a href="/publicAdmission" target="blank" className="btn btn-color">See More</a>
             </div>
           </div>
           <br />
           <div className="card text-center adcolor2">
             <div className="card-body">
-              <h5 className="cardad">*BRAC University Admission Test 2020-2021 time &amp; date Schedule*</h5>
+              <h5 className="cardad">*Private University Admission Test 2020-2021 time &amp; date Schedule*</h5>
               <a href="/privateAdmission"  target="blank" className="btn btn-color">See More</a>
             </div>
           </div>
@@ -291,6 +292,7 @@ const Details = () => {
             </div>
           </div>
         </div>
+        <QuestionHome/>
       </div>
       
     );

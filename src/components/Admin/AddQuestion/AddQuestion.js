@@ -50,14 +50,14 @@ const AddQuestion = () => {
 
             const rightValue = rightAnswer.filter(ans => ans.value === 'true')
             const ans = data[rightValue[0].name]
-            // console.log(ans);
+       
             const finalData ={
                 question: data.question,
-                rightAnswer: ans,
-                answer:[data.answer1,data.answer2,data.answer3,data.answer4]
+                rightAnswer: ans.toLowerCase(),
+                answer:[data.answer1.toLowerCase(),data.answer2.toLowerCase(),data.answer3.toLowerCase(),data.answer4.toLowerCase()]
                 
             }
-
+     console.log(finalData);
             fetch('http://localhost:4200/addQuestion', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -99,7 +99,7 @@ const AddQuestion = () => {
     return (
         <div>
             <AdminHeader />
-            <div className="row">
+            <div className="d-flex">
                 <div className="col-md-2">
                     <AdminSidebar />
                 </div>
@@ -192,7 +192,7 @@ const AddQuestion = () => {
                                                            
                                                         </div> */}
                                 <div className="form-group col-md-12 mt-4 pt-1 d-flex justify-content-center">
-                                    <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn text-white btn-primary font-weight-bold">Submit</button>
+                                    <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn btn-primary font-weight-bold">Submit</button>
                                 </div>
                             </div>
 

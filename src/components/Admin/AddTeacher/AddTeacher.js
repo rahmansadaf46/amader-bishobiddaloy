@@ -82,7 +82,7 @@ const AddTeacher = () => {
     return (
         <div>
             <AdminHeader />
-            <div className="row">
+            <div className="d-flex">
                 <div className="col-md-2">
                     <AdminSidebar />
                 </div>
@@ -163,7 +163,7 @@ const AddTeacher = () => {
                                 <div className="form-group row">
 
                                     <div className="form-group col-md-12 mt-4 pt-1 d-flex justify-content-center">
-                                        <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn text-white btn-primary font-weight-bold">Submit</button>
+                                        <button type="submit" style={{ padding: '10px 90px', borderRadius: '40px' }} className="btn btn-primary font-weight-bold">Submit</button>
                                     </div>
                                 </div>
 

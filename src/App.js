@@ -8,7 +8,7 @@ import './App.css';
 import AddItem from "./components/Admin/AddItem/AddItem";
 import AddQuestion from "./components/Admin/AddQuestion/AddQuestion";
 import AddTeacher from "./components/Admin/AddTeacher/AddTeacher";
-import AllItem from "./components/Admin/AllItem/AllItem";
+// import AllItem from "./components/Admin/AllItem/AllItem";
 import DeliveryOrder from "./components/Admin/DeliveryOrder/DeliveryOrder";
 import PendingOrder from "./components/Admin/PendingOrder/PendingOrder";
 import Checkout from "./components/Checkout/Checkout/Checkout";
@@ -42,6 +42,11 @@ import NationalAdmission from "./components/Admission/NationalAdmission/National
 import PrivateHomepage from "./components/Homepage/PrivateHomepage/PrivateHomepage";
 import PublicHomepage from "./components/Homepage/PublicHomepage/PublicHomepage";
 import NationalHomePage from "./components/Homepage/NationalHomepage/NationalHomePage";
+import QuestionBank from "./components/QuestionBank/QuestionBank";
+import QuestionList from "./components/Admin/QuestionList/QuestionList";
+import TeacherList from "./components/Admin/TeacherList/TeacherList";
+import ItemList from "./components/Admin/ItemList/ItemList";
+import QuestionProfile from "./components/Admin/QuestionProfile/QuestionProfile";
 
 export const UserContext = createContext();
 
@@ -99,10 +104,19 @@ function App() {
             <AddItem/>
           </Route>
           <Route path="/admin/itemList">
-            <AllItem/>
+            <ItemList/>
           </Route>
           <Route path="/admin/addQuestion">
             <AddQuestion/>
+          </Route>
+          <Route path="/admin/questionList">
+            <QuestionList/>
+          </Route>
+          <Route path="/admin/question/:id">
+            <QuestionProfile />
+          </Route>
+          <Route path="/admin/teacherList">
+            <TeacherList/>
           </Route>
           <Route path="/admin/addTeacher">
             <AddTeacher/>
@@ -152,6 +166,9 @@ function App() {
           </Route>
           <Route path="/nationalHomepage">
             <NationalHomePage />
+          </Route>
+          <Route path="/questionBank">
+            <QuestionBank />
           </Route>
           <Route path="/aboutUs">
             <AboutUs />
