@@ -24,7 +24,8 @@ const Exam = () => {
         fetch('http://localhost:4200/questions')
         .then(res => res.json())
         .then(data => {
-            setQuestion(data);
+           
+            setQuestion(shuffle(data));
            
          
         })
@@ -84,7 +85,7 @@ const Exam = () => {
             array[randomIndex], array[currentIndex]];
         }
       
-        return array?.slice(0,20);
+        return array;
       }
     return (
         <div>
@@ -93,7 +94,7 @@ const Exam = () => {
         <div style={{}} className="text-center">
        
             {
-               shuffle(question)?.map((question,index) =>
+               question.slice(0,1)?.map((question,index) =>
                 <form action="#" method="post" style={{fontSize: '20px',border:'1px solid white',padding:'40px',width:'100%',borderRadius:'50px',boxShadow:'5px 5px 20px gray',marginBottom:'50px'}}>
                <fieldset >
                 {/* <legend>Give your feedback</legend> */}
@@ -122,7 +123,7 @@ const Exam = () => {
         </div>
            <div style={{display: result ?  'flex' :'none',marginTop:'50px',marginBottom:'100px'}} className=" justify-content-center container py-5">
            <div style={{border:'1px solid white',padding:'50px',width:'50%',borderRadius:'50px',boxShadow:'5px 5px 20px gray'}} className="text-center">
-            <p style={{fontSize:'30px'}} className="font-weight-bold text-dark">Your result is <span className="text-success">{resultCount}</span>/<span className="text-danger  ">{question.length}</span></p>
+            <p style={{fontSize:'30px'}} className="font-weight-bold text-dark">Your result is <span className="text-success">{resultCount}</span>/<span className="text-danger">20</span></p>
             <button onClick={() =>window.location.assign('/skillTest')} className="btn btn-warning font-weight-bold">Again Test Your Skill</button>
         </div>
            </div>
