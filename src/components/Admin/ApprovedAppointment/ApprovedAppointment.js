@@ -101,7 +101,7 @@ const ApprovedAppointment = () => {
                                         <div className="col-md-12 ">
                                         <p className="font-weight-bold text-dark">Time: <span className="text-primary">{formatAMPM(fd.approvedData?.startTime)} - {formatAMPM(fd.approvedData?.endTime)}</span></p>
                                         <p className="font-weight-bold text-dark">Date: <span className="text-primary">{formatDate(fd.approvedData?.date)}</span></p>
-                                        <p className="font-weight-bold text-dark">Link: <a href={fd.approvedData?.link} target="_blank" rel = "noopener noreferrer" className="text-primary">{fd.approvedData?.link}</a></p>
+                                        <p className="font-weight-bold text-dark">Link: <a href={fd.approvedData?.link} target="_blank" rel = "noopener noreferrer" className="text-primary">{fd.approvedData?.link.slice(0,65)}...</a></p>
                                             {/* <p className="mt-2 font-weight-bold">Amount: <span className="text-primary">{fd.finalData.amount}$</span></p>&nbsp;&nbsp;  */}
                                             {/* <button onClick={() => openModal(fd)} style={{ padding: '10px 10px' }} className="btn btn-warning font-weight-bold">Approve Appointment</button>
                                             <UpdateAppointment modalIsOpen={modalIsOpen} item={item} closeModal={closeModal}></UpdateAppointment> */}
