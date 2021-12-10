@@ -78,20 +78,26 @@ const TeacherList = () => {
             sortable: true,
         },
         {
+            name: 'Status',
+            selector: row => row.status,
+            cell: row => <p style={{ color: row.status === "Active" ? 'green' :"red",position:'relative',top:'7px' }}><b>{row.status}</b></p>,
+            sortable: true,
+        },
+        {
             name: "Action",
             // width: '75px',
             cell: (data) => (
                 <div>
                     {" "}
                     <Link
-                        className="btn btn-sm btn-success font-weight-bold"
-                        // to={`/user/teacher/${data._id}`}
-                    // onClick={() => {
-                    //         console.log(data)
-                    //         setBook(data)
-                    //         openModal()
+                        className="btn btn-sm btn-info font-weight-bold"
+                        to={`/admin/teacher/${data._id}`}
+                    onClick={() => {
+                            console.log(data)
+                            // setBook(data)
+                            // openModal()
 
-                    // }}
+                    }}
                     >
                         Details
 

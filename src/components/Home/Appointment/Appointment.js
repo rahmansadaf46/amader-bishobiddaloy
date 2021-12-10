@@ -106,11 +106,12 @@ const Appointment = () => {
         fetch('http://localhost:4200/teachers')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
+                const activeTeacher = data.filter(teacher => teacher.status === "Active")
                 // let tempArray = []; 
                 // const teacherCollection = data.map(teacher => { return teacher.data })
-                setTeachers(data);
-                setAllTeachers(data)
+                setTeachers(activeTeacher);
+                setAllTeachers(activeTeacher)
                 // setAllItem(data);
                 // localStorage.setItem('item', JSON.stringify(data));
 

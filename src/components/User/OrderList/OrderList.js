@@ -29,7 +29,7 @@ const OrderList = () => {
     return (
         <div>
             <UserHeader />
-            <div className="row">
+            <div className="d-flex">
                 <div className="col-md-2">
                     <UserSidebar />
                 </div>

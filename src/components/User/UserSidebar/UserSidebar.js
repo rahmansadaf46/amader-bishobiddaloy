@@ -13,20 +13,20 @@ const UserSidebar = () => {
        
             <li>
                 <Link to="/user/appointmentStatus" className="">
-                    <span style={{color: 'blue', fontWeight: 'bold'}}> <FontAwesomeIcon icon={faUserFriends} /> Appointment Status</span>
+                    <span style={{color: 'blue', fontWeight: 'bold',fontSize:'14px' }}> <FontAwesomeIcon icon={faUserFriends} /> Appointment Status</span>
                 </Link>
             </li>
             <br />
    
             <li>
                 <Link to="/user/orderList" className="">
-                    <span style={{ color: 'blue', fontWeight: 'bold' }}> <FontAwesomeIcon icon={faThList} /> Order Status</span>
+                    <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}> <FontAwesomeIcon icon={faThList} /> Order Status</span>
                 </Link>
             </li>
             <br />
             <li>
                 <Link to="/user/opinion" className="">
-                    <span style={{ color: 'blue', fontWeight: 'bold' }}><FontAwesomeIcon icon={faCheckCircle} /> Add an Opinion</span>
+                    <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px'}}><FontAwesomeIcon icon={faCheckCircle} /> Add an Opinion</span>
                 </Link>
             </li>
             <br />

@@ -36,12 +36,12 @@ const AdminSidebar = () => {
                     </Link>
                 </li>
                 <br />
-                {/* <li>
+                <li>
                     <Link to="/admin/addQuestion" className="">
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faPlus} /> Add University</span>
                     </Link>
                 </li>
-                <br /> */}
+                <br />
                 <li>
                     <Link to="/admin/addTeacher" className="">
                         <span style={{color: 'blue', fontWeight: 'bold',fontSize:'14px'}}> <FontAwesomeIcon icon={faPlus} /> Add Teacher</span>
@@ -53,24 +53,24 @@ const AdminSidebar = () => {
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> Question List</span>
                     </Link>
                 </li>
-                {/* <br />
+                <br />
                 <li>
                     <Link to="/admin/teacherList" className="">
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> Teacher List</span>
                     </Link>
-                </li> */}
-                {/* <br />
+                </li>
+                <br />
                 <li>
                     <Link to="/admin/itemList" className="">
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> Book List</span>
                     </Link>
-                </li> */}
-                {/* <br />
+                </li>
+                <br />
                 <li>
                     <Link to="/admin/teacherList" className="">
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> University List</span>
                     </Link>
-                </li> */}
+                </li>
                 {/* <br />
                 <li>
                     <Link to="/admin/itemList" className="">
