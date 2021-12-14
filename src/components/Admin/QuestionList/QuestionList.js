@@ -193,13 +193,16 @@ const QuestionList = () => {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <div className="col-6">   <div style={{ marginBottom: '100px' }} className="container pb-5 d-flex justify-content-center">
+                        <div className="col-6">   <div style={{ marginBottom: '100px' }} className="container pb-5 ">
 
 
                             <DataTable
                                 columns={columns}
                                 data={search(questions)}
                                 customStyles={customStyles}
+                                pagination
+                                paginationPerPage={5}
+                                paginationRowsPerPageOptions={[1,2,3,4,5]}
                             // selectableRows
                             />
                         </div></div>

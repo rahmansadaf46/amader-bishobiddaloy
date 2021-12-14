@@ -48,6 +48,7 @@ import TeacherList from "./components/Admin/TeacherList/TeacherList";
 import ItemList from "./components/Admin/ItemList/ItemList";
 import QuestionProfile from "./components/Admin/QuestionProfile/QuestionProfile";
 import AdminTeacherProfile from "./components/Admin/TeacherProfile/AdminTeacherProfile";
+import AddUniversity from "./components/Admin/AddUniversity/AddUniversity";
 
 export const UserContext = createContext();
 
@@ -106,6 +107,9 @@ function App() {
           </Route>
           <Route path="/admin/itemList">
             <ItemList/>
+          </Route>
+          <Route path="/admin/addUniversity">
+            <AddUniversity/>
           </Route>
           <Route path="/admin/addQuestion">
             <AddQuestion/>

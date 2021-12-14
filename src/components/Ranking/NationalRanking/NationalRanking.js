@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Ranking.css';
 import pic from '../../../fakeData/images/images/ranking/national.jpg';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 const NationalRanking = () => {
+    const [universities, setUniversities] = useState([]);
+    useEffect(() => {
+        fetch(`http://localhost:4200/universities`)
+            .then(res => res.json())
+            .then(response => {
+                let categoryWise = response.filter(data => data.data.category === "National");
+                const ranking = categoryWise.sort(function (a, b) {
+                    return a.data.ranking - b.data.ranking
+                })
+                setUniversities(ranking)
+            })
+    }, [])
     return (
         <div>
             <Header></Header>
@@ -23,11 +35,15 @@ const NationalRanking = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">01</th>
-                            <td>Rajshahi College, Rajshahi</td>
-                        </tr>
-                        <tr>
+                        {universities.map(data =>
+                            <tr>
+                                <th scope="row">{data.data.ranking}</th>
+                                <td>{data.data.universityName}</td>
+                            </tr>
+
+                        )}
+
+                        {/* <tr>
                             <th scope="row">02</th>
                             <td>Eden Mohila College, Dhaka</td>
                         </tr>
@@ -62,7 +78,7 @@ const NationalRanking = () => {
                         <tr>
                             <th scope="row">10</th>
                             <td>Lalmatia Mohila College, Dhaka (Private)</td>
-                        </tr>
+                        </tr> */}
                     </tbody>
                 </table>
             </div>

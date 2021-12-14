@@ -86,7 +86,7 @@ const AdminTeacherProfile = () => {
                     <div className="d-flex justify-content-center mt-5">
                         <button  onClick={openModal}  className="btn btn-warning mx-2 font-weight-bold" >Update Teacher</button>
                         <UpdateTeacher modalIsOpen={modalIsOpen} teacher={teacher} closeModal={closeModal}></UpdateTeacher>
-                        <button onClick={() => { if (window.confirm('Are You Sure?')) { handleDelete(teacher._id) }; }} className="btn btn-danger mx-2 font-weight-bold" >Delete Question</button>
+                        <button onClick={() => { if (window.confirm('Are You Sure?')) { handleDelete(teacher._id) }; }} className="btn btn-danger mx-2 font-weight-bold" >Delete Teacher</button>
                     </div>
                   
                 </div>

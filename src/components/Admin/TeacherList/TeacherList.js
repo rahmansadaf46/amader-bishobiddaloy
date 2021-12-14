@@ -192,13 +192,16 @@ const TeacherList = () => {
                 </form>
                     </div>
                     <div className="col-md-12">
-                        <div>   <div style={{ marginBottom: '100px' }} className="container pb-5 d-flex justify-content-center">
+                        <div>   <div style={{ marginBottom: '100px' }} className="container pb-5 ">
 
 
                             <DataTable
                                 columns={columns}
                                 data={search(teachers)}
                                 customStyles={customStyles}
+                                pagination
+                                paginationPerPage={5}
+                                paginationRowsPerPageOptions={[1,2,3,4,5]}
                             // selectableRows
                             />
                         </div></div>

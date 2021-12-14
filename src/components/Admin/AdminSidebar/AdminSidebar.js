@@ -35,12 +35,12 @@ const AdminSidebar = () => {
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faPlus} /> Add Question</span>
                     </Link>
                 </li>
-                {/* <br />
+                <br />
                 <li>
-                    <Link to="/admin/addQuestion" className="">
+                    <Link to="/admin/addUniversity" className="">
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faPlus} /> Add University</span>
                     </Link>
-                </li> */}
+                </li>
                 <br />
                 <li>
                     <Link to="/admin/addTeacher" className="">
