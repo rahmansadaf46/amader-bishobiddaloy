@@ -3,8 +3,23 @@ import '../Ranking.css';
 import pic from '../../../fakeData/images/images/ranking/private.jpg';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
+import Select from "react-select";
 const PrivateRanking = () => {
+  const [allUniversities, setAllUniversities] = useState([]);
   const [universities, setUniversities] = useState([]);
+  const [selectedOption, setSelectedOption] = useState("")
+  const [options] = useState([
+    { value: 'CSE', label: 'CSE' },
+    { value: 'EEE', label: 'EEE' },
+    { value: 'Software Engineering', label: 'Software Engineering' },
+    { value: 'Pharmacy', label: 'Pharmacy' },
+    { value: 'BBA', label: 'BBA' },
+    { value: 'English', label: 'English' },
+    { value: 'Marketing', label: 'Marketing' },
+    { value: 'Psychology', label: 'Psychology' },
+    { value: 'Accounting', label: 'Accounting' },
+    { value: 'Political Science', label: 'Political Science' },
+  ]);
   useEffect(() => {
     fetch(`http://localhost:4200/universities`)
       .then(res => res.json())
@@ -14,8 +29,53 @@ const PrivateRanking = () => {
           return a.data.ranking - b.data.ranking
         })
         setUniversities(ranking)
+        setAllUniversities(ranking)
       })
   }, [])
+  const customStylesSelect = {
+    control: (provided, state) => ({
+      ...provided,
+      marginTop: "2px",
+      borderRadius: "0px",
+      minHeight: "36px",
+      height: "30px",
+      width: "250px",
+      boxShadow: state.isFocused ? null : null,
+    }),
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
+      padding: "0 6px",
+      marginTop: "-6px",
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: "-20px -2px",
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+    }),
+  };
+  const onChangeOption = (data) => {
+    if (data !== null) {
+      setSelectedOption({ value: data?.value, label: data?.value })
+      console.log(data?.value)
+      const findVarsity = allUniversities?.filter(university => {
+        console.log(university?.data?.subject)
+        let filterVarsity = university?.data?.subject?.includes(data?.value);
+        return filterVarsity;
+      })
+      setUniversities(findVarsity)
+    }
+    else {
+      setSelectedOption("")
+      setUniversities(allUniversities)
+    }
+  }
   return (
     <div>
       <Header></Header>
@@ -27,6 +87,24 @@ const PrivateRanking = () => {
         <div className="rankingimage">
           <img src={pic} alt="" />
         </div>
+        <div>
+          <div className="mx-5 mt-5">
+            <div className="form-inline d-flex justify-content-start">
+              <label style={{ position: 'relative', right: '15px' }} className="font-weight-bold text-dark " htmlFor="filter">Filter With Subject</label>
+              <div>
+                <Select
+                  styles={customStylesSelect}
+                  options={options}
+                  onChange={(e) => {
+                    onChangeOption(e);
+                  }}
+                  value={selectedOption}
+                  isSearchable={true}
+                  isClearable={true}
+                /></div>
+            </div>
+          </div>
+        </div>
         <table className="ranking">
           <thead>
             <tr>
@@ -36,9 +114,9 @@ const PrivateRanking = () => {
             </tr>
           </thead>
           <tbody>
-            {universities.map(data =>
+            {universities.map((data, index) =>
               <tr>
-                <th scope="row">{data.data.ranking}</th>
+                <th scope="row">{index + 1}</th>
                 <td>{data.data.universityName}</td>
                 <td>{data.data.worldRanking}</td>
               </tr>
