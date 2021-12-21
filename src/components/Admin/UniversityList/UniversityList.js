@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import AdminHeader from '../AdminHeader/AdminHeader';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
-const ItemList = () => {
+const UniversityList = () => {
     // const { register, handleSubmit, errors } = useForm();
 
     // const [loading, setLoading] = useState(false);
@@ -58,16 +58,23 @@ const ItemList = () => {
     // useEffect(() => {
     //     setDept(JSON.parse(localStorage.getItem("dept")) || {});
     // }, [])
-    // const [allitems, setAllitems] = useState([]);
-    const [items, setItems] = useState([]);
+    // const [allquestions, setAllquestions] = useState([]);
+    const [universities, setUniversities] = useState([]);
     const [query, setQuery] = useState("");
     const columns = [
         {
-            name: 'Book Name',
-            selector: row => row.title,
+            name: 'University Name',
+            selector: row => row.universityName,
             sortable: true,
             wrap: true,
         },
+        {
+            name: 'Category',
+            selector: row => row.category,
+            sortable: true,
+            wrap: true,
+        },
+        
         // {
         //     name: 'Department',
         //     selector: row => row.category,
@@ -86,7 +93,7 @@ const ItemList = () => {
                     {" "}
                     <Link
                         className="btn btn-sm btn-success font-weight-bold"
-                        to={`/admin/item/${data._id}`}
+                        to={`/admin/question/${data.id}`}
                     onClick={() => {
                             console.log(data)
                             // setBook(data)
@@ -105,18 +112,18 @@ const ItemList = () => {
         },
     ];
     useEffect(() => {
-        fetch('http://localhost:4200/items')
+        fetch('http://localhost:4200/universities')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 // let tempArray = []; 
-                // const questionList = data.map(teacher => { 
-                //     const info =teacher.data;
-                //     info.id = teacher._id;
-                //     return info })
-                setItems(data)
+                const universityList = data.map(university => { 
+                    const info = university.data;
+                    info.id = university._id;
+                    return info })
+                setUniversities(universityList)
                 // console.log(questionList);
-                // setAllitems(data)
+                // setAllquestions(data)
                 // setAllItem(data);
                 // localStorage.setItem('item', JSON.stringify(data));
 
@@ -170,7 +177,7 @@ const ItemList = () => {
                 </div>
                 <div style={{ backgroundColor: '#d6ffff', height: '100vh' }} className="col-md-10 pt-4">
                     <div className="text-center  text-primary">
-                        <h2><u>Book List</u></h2>
+                        <h2><u>University List</u></h2>
                     </div>
                     <div className="d-flex justify-content-center">
                         <div className="d-flex justify-content-start container col-6">
@@ -193,13 +200,16 @@ const ItemList = () => {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center">
-                        <div className="col-6">   <div style={{ marginBottom: '100px' }} className="container pb-5 d-flex justify-content-center">
+                        <div className="col-6">   <div style={{ marginBottom: '100px' }} className="container pb-5 ">
 
 
                             <DataTable
                                 columns={columns}
-                                data={search(items)}
+                                data={search(universities)}
                                 customStyles={customStyles}
+                                pagination
+                                paginationPerPage={5}
+                                paginationRowsPerPageOptions={[1,2,3,4,5]}
                             // selectableRows
                             />
                         </div></div>
@@ -211,4 +221,4 @@ const ItemList = () => {
     );
 };
 
-export default ItemList;
+export default UniversityList;

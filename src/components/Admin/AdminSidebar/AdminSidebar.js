@@ -59,7 +59,7 @@ const AdminSidebar = () => {
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> Teacher List</span>
                     </Link>
                 </li>
-                {/* <br />
+                <br />
                 <li>
                     <Link to="/admin/itemList" className="">
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> Book List</span>
@@ -67,10 +67,10 @@ const AdminSidebar = () => {
                 </li>
                 <br />
                 <li>
-                    <Link to="/admin/teacherList" className="">
+                    <Link to="/admin/universityList" className="">
                         <span style={{ color: 'blue', fontWeight: 'bold',fontSize:'14px' }}><FontAwesomeIcon icon={faThList} /> University List</span>
                     </Link>
-                </li> */}
+                </li>
          
                 <br />
 

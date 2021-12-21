@@ -47,7 +47,7 @@ const AdminTeacherProfile = () => {
         })
             .then(res => res.json())
             .then(result => {
-                localStorage.removeItem("student");
+                
                 alert('Deleted')
                 if (result) {
                     history.goBack()

@@ -5,10 +5,12 @@ import React, {
 import AdminHeader from '../AdminHeader/AdminHeader';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import { useHistory, useParams } from 'react-router';
-import UpdateQuestion from '../UpdateQuestion/UpdateQuestion';
-const QuestionProfile = () => {
+// import UpdateQuestion from '../UpdateQuestion/UpdateQuestion';
+// import UpdateTeacher from '../UpdateTeacher/UpdateTeacher';
+import UpdateItem from '../UpdateItem/UpdateItem';
+const ItemProfile = () => {
     const { id } = useParams();
-    const [question, setQuestion] =useState([])
+    const [item, setItem] =useState([])
     const email = sessionStorage.getItem('email')
     let history = useHistory();
     useEffect(() => {
@@ -19,12 +21,12 @@ const QuestionProfile = () => {
         }
     }, [email])
     useEffect(() => {
-        fetch(`http://localhost:4200/question/${id}`)
+        fetch(`http://localhost:4200/item/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 window.scrollTo(0, 0);
-                setQuestion(data);
+                setItem(data);
       
             })
     }, [id])
@@ -41,7 +43,7 @@ const QuestionProfile = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:4200/deleteQuestion/${id}`, {
+        fetch(`http://localhost:4200/deleteItem/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -63,24 +65,23 @@ const QuestionProfile = () => {
                 </div>
                 <div style={{ backgroundColor: '#d6ffff', height: '100vh' }} className="col-md-10 pt-4">
                     <div className="text-center  text-primary">
-                        <h2><u>Question</u></h2>
+                        <h2><u>Book</u></h2>
                     </div>
                     <div className="d-flex justify-content-center">
                             <div style={{border: '1px solid lightGray',boxShadow: '5px 5px 20px gray',padding: '30px'}}>
-                                 <p style={{fontSize: '18px' }}><b>Question Name:</b> &nbsp; <span className="text-primary font-weight-bold">{question?.data?.question}</span></p>
-                                 <p><b>Answer 1:</b> &nbsp; <span className="text-danger font-weight-bold text-capitalize">{question?.data?.answer[0]}</span></p>  
-                                 <p><b>Answer 2:</b> &nbsp; <span className="text-danger font-weight-bold text-capitalize">{question?.data?.answer[1]}</span></p>  
-                                 <p><b>Answer 3:</b> &nbsp; <span className="text-danger font-weight-bold text-capitalize">{question?.data?.answer[2]}</span></p>  
-                                 <p><b>Answer 4:</b> &nbsp; <span className="text-danger  font-weight-bold text-capitalize">{question?.data?.answer[3]}</span></p> 
-                                 <br />
-
-                                  <p><b>Right Answer:</b> &nbsp; <span className="text-success font-weight-bold text-capitalize">{question?.data?.rightAnswer}</span></p>   
+                                <div className="d-flex justify-content-center">
+                                    <img className="w-50 mb-4" src={`http://localhost:4200/${item.image}`} alt="" />
+                                </div>
+                                 <p style={{fontSize: '18px' }}><b>Book Name:</b> &nbsp; <span className="text-primary font-weight-bold">{item?.title}</span></p>
+                                 <p style={{fontSize: '18px' }}><b>Price:</b> &nbsp; <span className="text-primary font-weight-bold">{item?.price}$</span></p>
+                                 <p style={{fontSize: '18px' }}><b>Short Description:</b> &nbsp; <span className="text-primary font-weight-bold">{item?.shortDescription}</span></p>
+                                 <p style={{fontSize: '18px' }}><b>Description:</b> &nbsp; <span className="text-primary font-weight-bold">{item?.description}</span></p>
                             </div>
                     </div>
                     <div className="d-flex justify-content-center mt-5">
-                        <button  onClick={openModal}  className="btn btn-warning mx-2 font-weight-bold" >Update Question</button>
-                        <UpdateQuestion modalIsOpen={modalIsOpen} question={question} closeModal={closeModal}></UpdateQuestion>
-                        <button onClick={() => { if (window.confirm('Are You Sure?')) { handleDelete(question._id) }; }} className="btn btn-danger mx-2 font-weight-bold" >Delete Question</button>
+                        <button  onClick={openModal}  className="btn btn-warning mx-2 font-weight-bold" >Update Book</button>
+                        <UpdateItem modalIsOpen={modalIsOpen} item={item} closeModal={closeModal}></UpdateItem>
+                        <button onClick={() => { if (window.confirm('Are You Sure?')) { handleDelete(item._id) }; }} className="btn btn-danger mx-2 font-weight-bold" >Delete Book</button>
                     </div>
                   
                 </div>
@@ -90,4 +91,4 @@ const QuestionProfile = () => {
     );
 };
 
-export default QuestionProfile;
+export default ItemProfile;
