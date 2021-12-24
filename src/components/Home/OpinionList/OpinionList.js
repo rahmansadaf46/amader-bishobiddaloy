@@ -12,7 +12,7 @@ const OpinionList = () => {
         fetch('http://localhost:4200/opinions')
             .then((response) => response.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setOpinions(data)
             })
     }, [])

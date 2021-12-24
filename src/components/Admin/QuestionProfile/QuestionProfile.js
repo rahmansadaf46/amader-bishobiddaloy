@@ -22,7 +22,7 @@ const QuestionProfile = () => {
         fetch(`http://localhost:4200/question/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 window.scrollTo(0, 0);
                 setQuestion(data);
       

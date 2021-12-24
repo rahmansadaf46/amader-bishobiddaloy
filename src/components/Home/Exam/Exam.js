@@ -62,7 +62,7 @@ const Exam = () => {
     }
 
     const handleSubmit = () => {
-        console.log(answer)
+        // console.log(answer)
         const result = answer.filter(ans=> ans.answer === 'Right')
         // alert(`Your result is ${result.length}/${question.length}`)
         // window.location.assign('/')

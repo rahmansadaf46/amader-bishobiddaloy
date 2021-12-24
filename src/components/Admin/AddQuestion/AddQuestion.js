@@ -57,7 +57,7 @@ const AddQuestion = () => {
                 answer:[data.answer1.toLowerCase(),data.answer2.toLowerCase(),data.answer3.toLowerCase(),data.answer4.toLowerCase()]
                 
             }
-     console.log(finalData);
+    //  console.log(finalData);
             fetch('http://localhost:4200/addQuestion', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

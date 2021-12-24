@@ -88,7 +88,7 @@ const ItemList = () => {
                         className="btn btn-sm btn-success font-weight-bold"
                         to={`/admin/item/${data._id}`}
                     onClick={() => {
-                            console.log(data)
+                            // console.log(data)
                             // setBook(data)
                             // openModal()
 
@@ -108,7 +108,7 @@ const ItemList = () => {
         fetch('http://localhost:4200/items')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 // let tempArray = []; 
                 // const questionList = data.map(teacher => { 
                 //     const info =teacher.data;

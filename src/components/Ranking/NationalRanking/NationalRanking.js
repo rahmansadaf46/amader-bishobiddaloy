@@ -63,9 +63,9 @@ const NationalRanking = () => {
     const onChangeOption = (data) => {
         if (data !== null) {
             setSelectedOption({ value: data?.value, label: data?.value })
-            console.log(data?.value)
+            // console.log(data?.value)
             const findVarsity = allUniversities?.filter(university => {
-                console.log(university?.data?.subject)
+                // console.log(university?.data?.subject)
                 let filterVarsity = university?.data?.subject?.includes(data?.value);
                 return filterVarsity;
             })

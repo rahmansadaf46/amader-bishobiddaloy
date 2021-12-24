@@ -24,7 +24,7 @@ const ItemProfile = () => {
         fetch(`http://localhost:4200/item/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 window.scrollTo(0, 0);
                 setItem(data);
       

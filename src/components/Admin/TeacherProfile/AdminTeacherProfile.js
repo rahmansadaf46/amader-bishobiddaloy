@@ -23,7 +23,7 @@ const AdminTeacherProfile = () => {
         fetch(`http://localhost:4200/teacher/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 window.scrollTo(0, 0);
                 setTeacher(data);
       

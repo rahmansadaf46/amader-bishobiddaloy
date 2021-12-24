@@ -25,7 +25,7 @@ const ApprovedAppointment = () => {
             .then(data => {
 
                 const items = data.filter(item => item.status === "approved")
-                console.log(items);
+                // console.log(items);
                 setProduct(items?.reverse());
               
 

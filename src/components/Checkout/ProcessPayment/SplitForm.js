@@ -50,11 +50,11 @@ const SplitForm = () => {
             return;
         }
 
-        const payload = await stripe.createPaymentMethod({
-            type: "card",
-            card: elements.getElement(CardNumberElement)
-        });
-        console.log("[PaymentMethod]", payload);
+        // const payload = await stripe.createPaymentMethod({
+        //     type: "card",
+        //     card: elements.getElement(CardNumberElement)
+        // });
+        // console.log("[PaymentMethod]", payload);
     };
 
     return (
@@ -64,16 +64,16 @@ const SplitForm = () => {
         <CardNumberElement
                     options={options}
                     onReady={() => {
-                        console.log("CardNumberElement [ready]");
+                        // console.log("CardNumberElement [ready]");
                     }}
                     onChange={event => {
-                        console.log("CardNumberElement [change]", event);
+                        // console.log("CardNumberElement [change]", event);
                     }}
                     onBlur={() => {
-                        console.log("CardNumberElement [blur]");
+                        // console.log("CardNumberElement [blur]");
                     }}
                     onFocus={() => {
-                        console.log("CardNumberElement [focus]");
+                        // console.log("CardNumberElement [focus]");
                     }}
                 />
             </label>
@@ -83,16 +83,16 @@ const SplitForm = () => {
         <CardExpiryElement
                     options={options}
                     onReady={() => {
-                        console.log("CardNumberElement [ready]");
+                        // console.log("CardNumberElement [ready]");
                     }}
                     onChange={event => {
-                        console.log("CardNumberElement [change]", event);
+                        // console.log("CardNumberElement [change]", event);
                     }}
                     onBlur={() => {
-                        console.log("CardNumberElement [blur]");
+                        // console.log("CardNumberElement [blur]");
                     }}
                     onFocus={() => {
-                        console.log("CardNumberElement [focus]");
+                        // console.log("CardNumberElement [focus]");
                     }}
                 />
             </label>
@@ -102,16 +102,16 @@ const SplitForm = () => {
         <CardCvcElement
                     options={options}
                     onReady={() => {
-                        console.log("CardNumberElement [ready]");
+                        // console.log("CardNumberElement [ready]");
                     }}
                     onChange={event => {
-                        console.log("CardNumberElement [change]", event);
+                        // console.log("CardNumberElement [change]", event);
                     }}
                     onBlur={() => {
-                        console.log("CardNumberElement [blur]");
+                        // console.log("CardNumberElement [blur]");
                     }}
                     onFocus={() => {
-                        console.log("CardNumberElement [focus]");
+                        // console.log("CardNumberElement [focus]");
                     }}
                 />
             </label>

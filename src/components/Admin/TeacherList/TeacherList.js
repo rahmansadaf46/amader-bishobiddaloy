@@ -93,7 +93,7 @@ const TeacherList = () => {
                         className="btn btn-sm btn-info font-weight-bold"
                         to={`/admin/teacher/${data._id}`}
                     onClick={() => {
-                            console.log(data)
+                            // console.log(data)
                             // setBook(data)
                             // openModal()
 
@@ -113,7 +113,7 @@ const TeacherList = () => {
         fetch('http://localhost:4200/teachers')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 // let tempArray = []; 
                 // const teacherCollection = data.map(teacher => { return teacher.data })
                 setTeachers(data);

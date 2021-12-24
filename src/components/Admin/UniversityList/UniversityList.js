@@ -9,11 +9,9 @@ import AdminHeader from '../AdminHeader/AdminHeader';
 import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 const UniversityList = () => {
-    // const { register, handleSubmit, errors } = useForm();
-
-    // const [loading, setLoading] = useState(false);
-    // const [dept, setDept] = useState([]);
-    // document.title = "Enroll A Student";
+    const [allUniversities, setAllUniversities] = useState([]);
+    const [universities, setUniversities] = useState([]);
+    const [query, setQuery] = useState("");
     const email = sessionStorage.getItem('email')
 
     useEffect(() => {
@@ -23,50 +21,14 @@ const UniversityList = () => {
             window.location.assign("/");
         }
     }, [email])
-    // const [file, setFile] = useState(null);
-    // const handleFileChange = (e) => {
-    //     const newFile = e.target.files[0];
-    //     setFile(newFile);
-    // }
-
-
-    // const onSubmit = data => {
-    //     const formData = new FormData();
-    //     formData.append('file', file);
-    //     formData.append('title', data.title);
-    //     formData.append('price', data.price);
-    //     formData.append('description', data.description);
-    //     formData.append('shortDescription', data.shortDescription);
-
-    //      fetch('http://localhost:4200/addItem', {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             window.alert('Item added successfully');
-    //             window.location.reload();
-    //         })
-
-    //         .catch(error => {
-    //             console.error(error)
-    //         })
-
-
-    // }
-
-    // useEffect(() => {
-    //     setDept(JSON.parse(localStorage.getItem("dept")) || {});
-    // }, [])
-    // const [allquestions, setAllquestions] = useState([]);
-    const [universities, setUniversities] = useState([]);
-    const [query, setQuery] = useState("");
+  
     const columns = [
         {
             name: 'University Name',
             selector: row => row.universityName,
             sortable: true,
             wrap: true,
+            width: '160px'
         },
         {
             name: 'Category',
@@ -74,32 +36,20 @@ const UniversityList = () => {
             sortable: true,
             wrap: true,
         },
-        
-        // {
-        //     name: 'Department',
-        //     selector: row => row.category,
-        //     sortable: true,
-        // },
-        // {
-        //     name: 'Subject',
-        //     selector: row => row.subject,
-        //     sortable: true,
-        // },
+        {
+            name: 'Ranking',
+            selector: row => row.ranking,
+            sortable: true,
+            wrap: true,
+        },
         {
             name: "Action",
-            // width: '75px',
             cell: (data) => (
                 <div>
                     {" "}
                     <Link
                         className="btn btn-sm btn-success font-weight-bold"
-                        to={`/admin/question/${data.id}`}
-                    onClick={() => {
-                            console.log(data)
-                            // setBook(data)
-                            // openModal()
-
-                    }}
+                        to={`/admin/university/${data.id}`}                    
                     >
                         Details
 
@@ -114,21 +64,15 @@ const UniversityList = () => {
     useEffect(() => {
         fetch('http://localhost:4200/universities')
             .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                // let tempArray = []; 
-                const universityList = data.map(university => { 
+            .then(data => { 
+                const universityList = data.map(university => {
                     const info = university.data;
                     info.id = university._id;
-                    return info })
+                    return info
+                })
                 setUniversities(universityList)
-                // console.log(questionList);
-                // setAllquestions(data)
-                // setAllItem(data);
-                // localStorage.setItem('item', JSON.stringify(data));
-
+                setAllUniversities(universityList)
             })
-        // const items = fakeData.slice(0, 6);
 
     }, []);
     const search = (rows) => {
@@ -168,6 +112,16 @@ const UniversityList = () => {
             },
         },
     };
+    const handleChange = (e) => {
+        if (e.target.value === "") {
+            setUniversities(allUniversities)
+        }
+        else {
+            const filterVarsity = allUniversities.filter(varsity => varsity.category === e.target.value);
+            setUniversities(filterVarsity)
+        }
+
+    }
     return (
         <div>
             <AdminHeader />
@@ -179,10 +133,10 @@ const UniversityList = () => {
                     <div className="text-center  text-primary">
                         <h2><u>University List</u></h2>
                     </div>
-                    <div className="d-flex justify-content-center">
+                    <div className="d-flex justify-content-center container">
                         <div className="d-flex justify-content-start container col-6">
                             <form className="form-group">
-                                <div className="container">
+                                <div style={{ position:'relative',left:"260px"}}className="container">
                                     <div className="form-inline d-flex justify-content-start">
                                         <label style={{ position: 'relative', right: '15px' }} className="font-weight-bold text-dark " htmlFor="filter">Search</label>
                                         <input
@@ -198,7 +152,26 @@ const UniversityList = () => {
                                 </div>
                             </form>
                         </div>
+                        <div className="d-flex justify-content-start container col-6">
+                            <form className="form-group">
+                                <div className="container">
+                                    <div className="form-inline d-flex justify-content-start">
+                                        <label style={{ position: 'relative', right: '15px' }} className="font-weight-bold text-dark " htmlFor="filter">Category</label>
+                                        <select required style={{ padding: '6px 50px', border: '1px solid lightGray' }} name="category"
+                                            onChange={(e) => handleChange(e)}
+                                        >
+                                            <option value="">All</option>
+                                            <option value="Public">Public</option>
+                                            <option value="Private">Private</option>
+                                            <option value="National">National</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
+
                     <div className="d-flex justify-content-center">
                         <div className="col-6">   <div style={{ marginBottom: '100px' }} className="container pb-5 ">
 
@@ -209,7 +182,7 @@ const UniversityList = () => {
                                 customStyles={customStyles}
                                 pagination
                                 paginationPerPage={5}
-                                paginationRowsPerPageOptions={[1,2,3,4,5]}
+                                paginationRowsPerPageOptions={[1, 2, 3, 4, 5]}
                             // selectableRows
                             />
                         </div></div>

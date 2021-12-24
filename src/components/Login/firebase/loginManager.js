@@ -31,8 +31,8 @@ export const handleSignOut = () => {
             return signedOutUser;
         })
         .catch(err => {
-            console.log(err);
-            console.log(err.message);
+            // console.log(err);
+            // console.log(err.message);
         })
 }
 
@@ -51,9 +51,9 @@ export const createUserWithEmailAndPassword = (name, email, password) => {
         })
 
         .catch(function (error) {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
+            // const errorCode = error.code;
+            // const errorMessage = error.message;
+            // console.log(errorCode, errorMessage);
             const newUserInfo = {};
             newUserInfo.error = error.message;
             newUserInfo.success = false;
@@ -74,9 +74,9 @@ export const signInWithEmailAndPassword = (email, password) => {
             return newUserInfo;
         })
         .catch(function (error) {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
+            // const errorCode = error.code;
+            // const errorMessage = error.message;
+            // console.log(errorCode, errorMessage);
             const newUserInfo = {};
             newUserInfo.error = error.message;
             return newUserInfo;
@@ -91,7 +91,7 @@ const updateUserName = name => {
     }).then(function () {
         // console.log('user name updated successfully')
     }).catch(function (error) {
-        console.log(error)
+        // console.log(error)
     });
 }
 

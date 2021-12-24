@@ -13,7 +13,7 @@ const TeacherProfile = () => {
         fetch(`http://localhost:4200/teacher/${id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 window.scrollTo(0, 0);
                 setTeacher(data);
       
@@ -23,12 +23,12 @@ const TeacherProfile = () => {
         fetch(`http://localhost:4200/appointments`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 // /${sessionStorage.getItem('email')}
                   const checkUser = data?.filter(user => user?.email === sessionStorage.getItem('email'))
-               console.log(checkUser)
+            //    console.log(checkUser)
                   const checkTeacher = checkUser?.filter(teacher => teacher?.teacher?._id === id && teacher?.status === "pending")
-                console.log(checkTeacher)
+                // console.log(checkTeacher)
                 if(checkTeacher.length> 0){
                     setApprove(false)
                 }
@@ -51,7 +51,7 @@ const TeacherProfile = () => {
         setCart(previousCart);
     }, [itemData])
     const handleAppointment = (data) =>{
-        console.log(data);
+        // console.log(data);
         const finalData ={
             email: sessionStorage.getItem('email'),
             teacher: data,

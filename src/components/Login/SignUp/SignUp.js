@@ -178,7 +178,7 @@ const SignUp = () => {
     // }
 
     const handleSubmit = (e) => {
-        console.log(user.email, user.password)
+        // console.log(user.email, user.password)
 
 
         if (confirm) {
@@ -196,7 +196,7 @@ const SignUp = () => {
                     }
                     setMsg(res.error)
 
-                    console.log(res)
+                    // console.log(res)
                 })
         }
         e.preventDefault();

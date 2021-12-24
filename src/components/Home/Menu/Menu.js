@@ -29,9 +29,9 @@ const Menu = () => {
         const productKeys = Object.keys(savedCart);
         const previousCart = productKeys.map(existingKey => {
             const product = JSON.parse(localStorage.getItem('item')).find(pd => pd._id === existingKey);
-            console.log(existingKey, savedCart[existingKey]);
+            // console.log(existingKey, savedCart[existingKey]);
             product.quantity = savedCart[existingKey];
-            console.log(product);
+            // console.log(product);
             return product;
         })
         // setProducts(previousCart);

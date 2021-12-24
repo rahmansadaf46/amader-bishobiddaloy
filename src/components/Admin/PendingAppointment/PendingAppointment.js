@@ -25,7 +25,7 @@ const PendingAppointment = () => {
             .then(data => {
 
                 const items = data.filter(item => item.status === "pending")
-                console.log(items);
+                // console.log(items);
                 setProduct(items);
                 // /${sessionStorage.getItem('email')}
                 //       const checkUser = data?.filter(user => user?.email === sessionStorage.getItem('email'))

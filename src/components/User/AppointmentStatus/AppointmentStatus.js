@@ -16,7 +16,7 @@ const AppointmentStatus = () => {
             .then(data => {
 
                 const items = data.filter(item => item.email === sessionStorage.getItem('email'))
-                console.log(items);
+                // console.log(items);
                 setProduct(items.reverse());
               
 

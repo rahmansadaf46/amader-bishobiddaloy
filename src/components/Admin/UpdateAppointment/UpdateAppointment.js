@@ -39,7 +39,7 @@ const UpdateAppointment = ({ modalIsOpen, closeModal, item }) => {
                 link: data.link
             }
         }
-        console.log(finalData)
+        // console.log(finalData)
         // const finalData= {
         //     address: item.finalData.address,
         //     amount: data.amount,

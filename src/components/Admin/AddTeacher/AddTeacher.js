@@ -49,7 +49,7 @@ const AddTeacher = () => {
         // setRightAnswer(data)
 
     }
-    console.log(category, subject)
+    // console.log(category, subject)
     const onSubmit = data => {
         data.category = category;
         data.subject = subject;

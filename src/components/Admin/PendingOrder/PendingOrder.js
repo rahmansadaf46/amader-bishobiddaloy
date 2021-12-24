@@ -26,12 +26,12 @@ const PendingOrder = () => {
                 // }
                 // const email= sessionStorage.getItem('email')
                 const items = data.filter(item => item.finalData.status === "Pending")
-                console.log(items,data)
+                // console.log(items,data)
                 setProduct(items);
             })
     }, [])
     const handleChange = (data) => {
-        console.log(data, "clicked")
+        // console.log(data, "clicked")
 
         const finalData = {
             address: data.finalData.address,

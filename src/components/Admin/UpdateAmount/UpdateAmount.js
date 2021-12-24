@@ -34,7 +34,7 @@ const UpdateAmount = ({ modalIsOpen, closeModal, item }) => {
             email: item.finalData.email,
             status: item.finalData.status,
         }
-        console.log(finalData)
+        // console.log(finalData)
         fetch(`http://localhost:4200/updateAmount/${item._id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
