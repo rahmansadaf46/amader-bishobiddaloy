@@ -62,7 +62,7 @@ const AboutUs = () => {
         </div>
         <div className="qdv">
           <div>
-            <h2>What is Aamderi Bissobiddaloy?</h2>
+            <h2>What is Aamderi Biswobidyaloy?</h2>
             <p>Think about the name Aamderi Bissobiddaloy. The name gives you the concept of the competition of university admission test in Bangladesh. Literally this is a war. Not a war with guns and soldier this is a war of intelligence ,war of  students to prove themselves the best candidate to get admit in Public University. The admissionwar is a very useful tool to get all updates about university admission. Not only university admission but also all education sector of Bangladesh.It is an internet based service to provide all education sector’s information of Bangladesh.</p>
           </div>
           <div>
